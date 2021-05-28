@@ -5,7 +5,7 @@
 <head>
 	<meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-   	<title>ApnaCMS :: Admin Home</title>
+   	<title>ApnaCMS :: Add New Parcel</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
 
 	<!-- Bootstrap CSS -->
@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
         
     <link rel="stylesheet" href="./assets/css/style.css">
-    <link rel="stylesheet" href="./assets/css/home.css">
+    <link rel="stylesheet" href="./assets/css/form.css">
     
     
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.4/css/jquery.dataTables.min.css">
@@ -52,12 +52,12 @@
     				<div class="nav__list">
                         <div class="nav__items">
                             <h3 class="nav__subtitle">Menu</h3> 
-    						<a href="#" class="nav__link active">
+    						<a href="#" class="nav__link ">
                                 <i class='bx bx-home nav__icon' ></i>
                                 <span class="nav__name">Home</span>
                             </a>
                             <div class="nav__dropdown">
-                                <a href="#" class="nav__link">
+                                <a href="#" class="nav__link ">
                                 	<i class='bx bx-git-branch nav__icon'></i>
                                     <span class="nav__name">Branch</span>
                                     <i class='bx bx-chevron-down nav__icon nav__dropdown-icon'></i>
@@ -83,14 +83,14 @@
                                 </div>
                             </div>
                             <div class="nav__dropdown">
-                                <a href="#" class="nav__link">
+                                <a href="#" class="nav__link active">
                                     <i class='bx bx-box nav__icon' ></i>
                                     <span class="nav__name">Parcel</span>
                                     <i class='bx bx-chevron-down nav__icon nav__dropdown-icon'></i>
                                 </a>
 								<div class="nav__dropdown-collapse">
                                     <div class="nav__dropdown-content">
-                                        <a href="#" class="nav__dropdown-item">Add New</a>
+                                        <a href="#" class="nav__dropdown-item active">Add New</a>
                                         <a href="#" class="nav__dropdown-item">List All</a>
                                         <a href="#" class="nav__dropdown-item">Item Accepted by courier</a>
                                         <a href="#" class="nav__dropdown-item">Collected</a>
@@ -134,122 +134,140 @@
 
         <!--========== CONTENTS ==========-->
         
-        <div class = "container-fluid">
-        	<div class="row">
-	            <div class="col-md-4">
-	                <div class="row">
-	                    <div class="col" style="padding:5px;">
-	               			<div class="card">
-							  <div class="card-header text-center" style = "border-radius:18px 18px 0px 0px;">Item Accepted By Courier</div>
-							  <div class="card-body">
-							    <b class="card-image"><i class='bx bx-search header__icon'></i></b>
-							    <p class="card-text">1</p>
-							  </div>
-							</div>
-	                    </div>
-	                    <div class="col" style="padding:5px;">
-	               			<div class="card">
-							  <div class="card-header text-center" style = "border-radius:18px 18px 0px 0px;">Collected</div>
-							  <div class="card-body">
-							    <b class="card-image"><i class='bx bx-search header__icon'></i></b>
-							    <p class="card-text">1</p>
-							  </div>
-							</div>
-	                    </div>
-	                </div>
+        <div class = "container-fluid page-header text-center">
+        	<b>Add New Parcel</b>
+        
+        </div>
+        <div class = "container-fluid form-container">
+        	
+        <form class = "form-body">
+            <div class="row">
+	          <div class="col-md-6">
+	              <b>Sender Information</b>
+	              <div class="form-group">
+	                <label for="" class="control-label">Name</label>
+	                <input type="text" name="sender_name" id="" class="form-control form-control-sm" value="" required="">
+	              </div>
+	              <div class="form-group">
+	                <label for="" class="control-label">Address</label>
+	                <input type="text" name="sender_address" id="" class="form-control form-control-sm" value="" required="">
+	              </div>
+	              <div class="form-group">
+	                <label for="" class="control-label">Contact #</label>
+	                <input type="text" name="sender_contact" id="" class="form-control form-control-sm" value="" required="">
+	              </div>
+	          </div>
+	          <div class="col-md-6">
+	              <b>Recipient Information</b>
+	              <div class="form-group">
+	                <label for="" class="control-label">Name</label>
+	                <input type="text" name="recipient_name" id="" class="form-control form-control-sm" value="" required="">
+	              </div>
+	              <div class="form-group">
+	                <label for="" class="control-label">Address</label>
+	                <input type="text" name="recipient_address" id="" class="form-control form-control-sm" value="" required="">
+	              </div>
+	              <div class="form-group">
+	                <label for="" class="control-label">Contact #</label>
+	                <input type="text" name="recipient_contact" id="" class="form-control form-control-sm" value="" required="">
+	              </div>
+	          </div>
+	        </div>
+           	<hr>
+           	<div class="row">
+	          <div class="col-md-6">
+	            <div class="form-group">
+	              <label for="dtype">Type</label>
+	              	<select name="category" class="form-control" style = "font-size: 12px;">
+                    	<option selected>Choose Type...</option>
+	                    <option>Deliver</option>
+	                    <option>PickUp</option>
+                    </select>
 	            </div>
-	            <div class="col-md-4">
-	                <div class="row">
-	                    <div class="col" style="padding:5px;">
-	               			<div class="card">
-							  <div class="card-header text-center" style = "border-radius:18px 18px 0px 0px;">Shipped</div>
-							  <div class="card-body">
-							    <b class="card-image"><i class='bx bx-search header__icon'></i></b>
-							    <p class="card-text">1</p>
-							  </div>
-							</div>
-	                    </div>
-	                    <div class="col" style="padding:5px;">
-	               			<div class="card">
-							  <div class="card-header text-center" style = "border-radius:18px 18px 0px 0px;">In-Transit</div>
-							  <div class="card-body">
-							    <b class="card-image"><i class='bx bx-search header__icon'></i></b>
-							    <p class="card-text">1</p>
-							  </div>
-							</div>
-	                    </div>
-	                </div>
+	          </div>
+	          <div class="col-md-6" id="">
+	             <div class="form-group" id="fbi-field">
+	                <label for="" class="control-label">Branch Processed</label>
+	              	<select name="category" class="form-control" style = "font-size: 12px;">
+	                   <option selected>Choose Branch Processed...</option>
+	                   <option>1</option>
+	                   <option>2</option>
+	                   <option>3</option>
+                    </select>
 	            </div>
-	            <div class="col-md-4">
-	                <div class="row">
-	                    <div class="col" style="padding:5px;">
-	               			<div class="card">
-							  <div class="card-header text-center" style = "border-radius:18px 18px 0px 0px;">Arrived At Destination</div>
-							  <div class="card-body">
-							    <b class="card-image"><i class='bx bx-search header__icon'></i></b>
-							    <p class="card-text">1</p>
-							  </div>
-							</div>
-	                    </div>
-	                    <div class="col" style="padding:5px;">
-	               			<div class="card">
-							  <div class="card-header text-center" style = "border-radius:18px 18px 0px 0px;">Out Of Delivery</div>
-							  <div class="card-body">
-							    <b class="card-image"><i class='bx bx-search header__icon'></i></b>
-							    <p class="card-text">1</p>
-							  </div>
-							</div>
-	                    </div>
-	                </div>
+	              
+	            <div class="form-group" id="tbi-field">
+	              	<label for="" class="control-label">Pickup Branch</label>
+	              	<select name="category" class="form-control" style = "font-size: 12px;">
+	                    <option selected>Choose Pickup Branch...</option>
+	                    <option>1</option>
+	                    <option>2</option>
+	                    <option>3</option>
+                    </select>
 	            </div>
-	            <div class="col-md-4">
-	                <div class="row">
-	                    <div class="col" style="padding:5px;">
-	               			<div class="card">
-							  <div class="card-header text-center" style = "border-radius:18px 18px 0px 0px;">Ready For PickUp</div>
-							  <div class="card-body">
-							    <b class="card-image"><i class='bx bx-search header__icon'></i></b>
-							    <p class="card-text">1</p>
-							  </div>
-							</div>
-	                    </div>
-	                    <div class="col" style="padding:5px;">
-	               			<div class="card">
-							  <div class="card-header text-center" style = "border-radius:18px 18px 0px 0px;">Delivered</div>
-							  <div class="card-body">
-							    <b class="card-image"><i class='bx bx-search header__icon'></i></b>
-							    <p class="card-text">1</p>
-							  </div>
-							</div>
-	                    </div>
-	                </div>
-	            </div>
-	            <div class="col-md-4">
-	                <div class="row">
-	                    <div class="col" style="padding:5px;">
-	               			<div class="card">
-							  <div class="card-header text-center" style = "border-radius:18px 18px 0px 0px;">Picked-Up</div>
-							  <div class="card-body">
-							    <b class="card-image"><i class='bx bx-search header__icon'></i></b>
-							    <p class="card-text">1</p>
-							  </div>
-							</div>
-	                    </div>
-	                    <div class="col" style="padding:5px;">
-	               			<div class="card">
-							  <div class="card-header text-center" style = "border-radius:18px 18px 0px 0px;">Unsuccessfully Delivery</div>
-							  <div class="card-body">
-							    <b class="card-image"><i class='bx bx-search header__icon'></i></b>
-							    <p class="card-text">1</p>
-							  </div>
-							</div>
-	                    </div>
-	                </div>
-	            </div>
-	            
-	            
-	            
-	         </div>
+	          </div>
+	        </div>
+            <hr>
+            <b>Parcel Information</b>
+            <div class="form-row">
+                <div class="form-group col-md-2">
+                    <label for="productprice">Height</label>
+                    <input type="text" class="form-control" name="firstname" placeholder="Height">
+                </div>
+                <div class="form-group col-md-2">
+                    <label for="productprice">Weight</label>
+                    <input type="text" class="form-control" name="lastname" placeholder="Weight">
+                </div>
+            	<div class="form-group col-md-2">
+                    <label for="productprice">Length</label>
+                    <input type="text" class="form-control" name="firstname" placeholder="Length">
+                </div>
+                <div class="form-group col-md-2">
+                    <label for="productprice">Width</label>
+                    <input type="text" class="form-control" name="lastname" placeholder="Width">
+                </div>
+            	<div class="form-group col-md-2">
+                    <label for="productprice">Price</label>
+                    <input type="text" class="form-control" name="firstname" placeholder="Price">
+                </div>
+                <div class="form-group col-md-2">
+                    <label for="productprice">Total</label>
+                    <input type="text" class="form-control" name="lastname" placeholder="Total">
+                </div>
+            </div>
+            <hr>
+            
+            <div class = "text-center">
+                <!-- Button trigger modal -->
+                <button type="button" class="btn btn-primary form-control"  data-toggle="modal" data-target="#exampleModalCenter" style = "font-size: 12px;font-weight: bolder;" >Submit</button>
+            </div>
+            
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header text-center">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Confirmation</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    </div>
+                    <div class="modal-body text-center">
+                   		You Want To Save Data
+                    </div>
+                    <div class="modal-footer">
+                    <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button> -->
+                        <button type="button" class="btn btn-danger" data-dismiss="modal" aria-label="Close">No</button>
+                        <button type="button" class="btn btn-primary" >Yes</button>
+                    </div>
+                </div>
+                </div>
+            </div>
+            
+        </form>
+        
+        
+        
         </div>
         
 	

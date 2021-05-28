@@ -1,4 +1,4 @@
-package com.apnacms.controller;
+package com.apnacms.admin.controller;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
@@ -8,16 +8,16 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementation class StaffHome
+ * Servlet implementation class Delivered
  */
-@WebServlet("/StaffHome")
-public class StaffHome extends HttpServlet {
+@WebServlet("/Delivered")
+public class Delivered extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public StaffHome() {
+    public Delivered() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -27,7 +27,7 @@ public class StaffHome extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		request.getRequestDispatcher("Staff/index.jsp").forward(request, response);  
+		request.getRequestDispatcher("Admin/delivered.jsp").forward(request, response); 
 	}
 
 	/**

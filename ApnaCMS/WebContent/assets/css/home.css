@@ -1,0 +1,30 @@
+.card{
+	border:none;
+	border-radius:18px;
+	box-shadow:1px 1px 1px 1px lightgrey;
+}
+
+
+.card:hover{
+	box-shadow:1px 2px 2px 2px grey;
+}
+
+.card-header{
+	background-color: #002060;
+	color:white;
+	font-size:12px;
+}
+
+.card-body{	
+	text-align: center;
+}
+
+.card-image {
+	float:left;
+}
+
+.card-text{
+	font-size:large;
+	font-weight: bolder;
+	float:right;
+}
