@@ -28,7 +28,7 @@
         <header class="header">
             <div class="header__container">
 				
-                <a href="#" class="header__logo" style = "text-decoration:none;">Apna Courier Management System - Admin Panel</a>
+                <a href="AdminPanel" class="header__logo" style = "text-decoration:none;">Apna Courier Management System - Admin Panel</a>
     
                 <div class="header__search">
                     <input type="search" placeholder="Search" class="header__input">
@@ -45,14 +45,14 @@
         <div class="nav" id="navbar">
             <nav class="nav__container">
                 <div>
-                    <a href="#" class="nav__link nav__logo" >
+                    <a href="AdminPanel" class="nav__link nav__logo" >
                         <i class='bx bx-mask nav__icon' ></i>
                         <span class="nav__logo-name">AdminPanel</span>
                     </a>
     				<div class="nav__list">
                         <div class="nav__items">
                             <h3 class="nav__subtitle">Menu</h3> 
-    						<a href="#" class="nav__link ">
+    						<a href="AdminPanel" class="nav__link ">
                                 <i class='bx bx-home nav__icon' ></i>
                                 <span class="nav__name">Home</span>
                             </a>
@@ -64,8 +64,8 @@
                                 </a>
 								<div class="nav__dropdown-collapse">
                                     <div class="nav__dropdown-content">
-                                        <a href="#" class="nav__dropdown-item active">Add New</a>
-                                        <a href="#" class="nav__dropdown-item">List</a>
+                                        <a href="AddNewBranch" class="nav__dropdown-item active">Add New</a>
+                                        <a href="BranchList" class="nav__dropdown-item">List</a>
                                     </div>
                                 </div>
                             </div>
@@ -77,8 +77,8 @@
                                 </a>
 								<div class="nav__dropdown-collapse">
                                     <div class="nav__dropdown-content">
-                                        <a href="#" class="nav__dropdown-item">Add New</a>
-                                        <a href="#" class="nav__dropdown-item">List</a>
+                                        <a href="AddNewBranchStaff" class="nav__dropdown-item">Add New</a>
+                                        <a href="BranchStaffList" class="nav__dropdown-item">List</a>
                                     </div>
                                 </div>
                             </div>
@@ -90,26 +90,26 @@
                                 </a>
 								<div class="nav__dropdown-collapse">
                                     <div class="nav__dropdown-content">
-                                        <a href="#" class="nav__dropdown-item">Add New</a>
-                                        <a href="#" class="nav__dropdown-item">List All</a>
-                                        <a href="#" class="nav__dropdown-item">Item Accepted by courier</a>
-                                        <a href="#" class="nav__dropdown-item">Collected</a>
-                                        <a href="#" class="nav__dropdown-item">Shipped</a>
-                                        <a href="#" class="nav__dropdown-item">In-Transit</a>
-                                        <a href="#" class="nav__dropdown-item">Arrived At Destination</a>
-                                        <a href="#" class="nav__dropdown-item">Out Of Delivery</a>
-                                        <a href="#" class="nav__dropdown-item">Ready To PickUp</a>
-                                        <a href="#" class="nav__dropdown-item">Delivered</a>
-                                        <a href="#" class="nav__dropdown-item">PickUp</a>
-                                        <a href="#" class="nav__dropdown-item">Unsuccessfully Delivery Attempt</a>
+                                        <a href="AddNewParcel" class="nav__dropdown-item">Add New</a>
+                                        <a href="ParcelList" class="nav__dropdown-item">List All</a>
+                                        <a href="ItemAcceptByCourier" class="nav__dropdown-item">Item Accepted by courier</a>
+                                        <a href="Collected" class="nav__dropdown-item">Collected</a>
+                                        <a href="Shipped" class="nav__dropdown-item">Shipped</a>
+                                        <a href="InTransit" class="nav__dropdown-item">In-Transit</a>
+                                        <a href="ArrivedAtDestination" class="nav__dropdown-item">Arrived At Destination</a>
+                                        <a href="OutForDelivery" class="nav__dropdown-item">Out For Delivery</a>
+                                        <a href="ReadyToPickUp" class="nav__dropdown-item">Ready To PickUp</a>
+                                        <a href="Delivered" class="nav__dropdown-item">Delivered</a>
+                                        <a href="PickUp" class="nav__dropdown-item">PickUp</a>
+                                        <a href="UnsuccessfullyDelivery" class="nav__dropdown-item">Unsuccessfully Delivery Attempt</a>
                                     </div>
                                 </div>
                             </div>
-                            <a href="#" class="nav__link ">
+                            <a href="TrackOrder" class="nav__link ">
                                 <i class='bx bx-current-location nav__icon' ></i>
                                 <span class="nav__name">Track Order</span>
                             </a>
-                            <a href="#" class="nav__link">
+                            <a href="Reports" class="nav__link">
                                 <i class='bx bxs-report nav__icon' ></i>
                                 <span class="nav__name">Reports</span>
                             </a>
@@ -117,7 +117,7 @@
     
                         <div class="nav__items">
                             <h3 class="nav__subtitle">Profile</h3>
-                            <a href="#" class="nav__link">
+                            <a href="ManageAccount" class="nav__link">
                                 <i class='bx bx-compass nav__icon' ></i>
                                 <span class="nav__name">Manage Account</span>
                             </a>
@@ -125,7 +125,7 @@
                     </div>
                 </div>
 
-                <a href="#" class="nav__link nav__logout">
+                <a href="LogOut" class="nav__link nav__logout">
                     <i class='bx bx-log-out nav__icon' ></i>
                     <span class="nav__name">Log Out</span>
                 </a>

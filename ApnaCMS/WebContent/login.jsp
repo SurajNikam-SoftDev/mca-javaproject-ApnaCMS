@@ -30,7 +30,7 @@
 					<b class = "p-3">Log In</b>
 				</div>
 				<hr> 
-				<form action="Admin/Home" method="POST">
+				<form action="./AdminHome">
 					<div class="form-group">
 						<label for="email_id">Email address</label> <input type="email"
 								class="form-control" name="email_id"

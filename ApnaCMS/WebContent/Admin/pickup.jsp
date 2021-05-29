@@ -28,7 +28,7 @@
         <header class="header">
             <div class="header__container">
 				
-                <a href="#" class="header__logo" style = "text-decoration:none;">Apna Courier Management System - Admin Panel</a>
+                <a href="AdminPanel" class="header__logo" style = "text-decoration:none;">Apna Courier Management System - Admin Panel</a>
     
                 <div class="header__search">
                     <input type="search" placeholder="Search" class="header__input">
@@ -45,14 +45,14 @@
         <div class="nav" id="navbar">
             <nav class="nav__container">
                 <div>
-                    <a href="#" class="nav__link nav__logo" >
+                    <a href="AdminPanel" class="nav__link nav__logo" >
                         <i class='bx bx-mask nav__icon' ></i>
                         <span class="nav__logo-name">AdminPanel</span>
                     </a>
     				<div class="nav__list">
                         <div class="nav__items">
                             <h3 class="nav__subtitle">Menu</h3> 
-    						<a href="#" class="nav__link ">
+    						<a href="AdminPanel" class="nav__link ">
                                 <i class='bx bx-home nav__icon' ></i>
                                 <span class="nav__name">Home</span>
                             </a>
@@ -64,8 +64,8 @@
                                 </a>
 								<div class="nav__dropdown-collapse">
                                     <div class="nav__dropdown-content">
-                                        <a href="#" class="nav__dropdown-item">Add New</a>
-                                        <a href="#" class="nav__dropdown-item ">List</a>
+                                        <a href="AddNewBranch" class="nav__dropdown-item">Add New</a>
+                                        <a href="BranchList" class="nav__dropdown-item">List</a>
                                     </div>
                                 </div>
                             </div>
@@ -77,39 +77,39 @@
                                 </a>
 								<div class="nav__dropdown-collapse">
                                     <div class="nav__dropdown-content">
-                                        <a href="#" class="nav__dropdown-item">Add New</a>
-                                        <a href="#" class="nav__dropdown-item">List</a>
+                                        <a href="AddNewBranchStaff" class="nav__dropdown-item">Add New</a>
+                                        <a href="BranchStaffList" class="nav__dropdown-item">List</a>
                                     </div>
                                 </div>
                             </div>
                             <div class="nav__dropdown">
-                                <a href="#" class="nav__link active">
+                                <a href="#" class="nav__link  active">
                                     <i class='bx bx-box nav__icon' ></i>
                                     <span class="nav__name">Parcel</span>
                                     <i class='bx bx-chevron-down nav__icon nav__dropdown-icon'></i>
                                 </a>
 								<div class="nav__dropdown-collapse">
                                     <div class="nav__dropdown-content">
-                                        <a href="#" class="nav__dropdown-item">Add New</a>
-                                        <a href="#" class="nav__dropdown-item">List All</a>
-                                        <a href="#" class="nav__dropdown-item">Item Accepted by courier</a>
-                                        <a href="#" class="nav__dropdown-item">Collected</a>
-                                        <a href="#" class="nav__dropdown-item">Shipped</a>
-                                        <a href="#" class="nav__dropdown-item">In-Transit</a>
-                                        <a href="#" class="nav__dropdown-item">Arrived At Destination</a>
-                                        <a href="#" class="nav__dropdown-item">Out Of Delivery</a>
-                                        <a href="#" class="nav__dropdown-item">Ready To PickUp</a>
-                                        <a href="#" class="nav__dropdown-item">Delivered</a>
-                                        <a href="#" class="nav__dropdown-item active">PickUp</a>
-                                        <a href="#" class="nav__dropdown-item">Unsuccessfully Delivery Attempt</a>
+                                        <a href="AddNewParcel" class="nav__dropdown-item">Add New</a>
+                                        <a href="ParcelList" class="nav__dropdown-item">List All</a>
+                                        <a href="ItemAcceptByCourier" class="nav__dropdown-item">Item Accepted by courier</a>
+                                        <a href="Collected" class="nav__dropdown-item">Collected</a>
+                                        <a href="Shipped" class="nav__dropdown-item">Shipped</a>
+                                        <a href="InTransit" class="nav__dropdown-item">In-Transit</a>
+                                        <a href="ArrivedAtDestination" class="nav__dropdown-item">Arrived At Destination</a>
+                                        <a href="OutForDelivery" class="nav__dropdown-item">Out For Delivery</a>
+                                        <a href="ReadyToPickUp" class="nav__dropdown-item">Ready To PickUp</a>
+                                        <a href="Delivered" class="nav__dropdown-item">Delivered</a>
+                                        <a href="PickUp" class="nav__dropdown-item active">PickUp</a>
+                                        <a href="UnsuccessfullyDelivery" class="nav__dropdown-item">Unsuccessfully Delivery Attempt</a>
                                     </div>
                                 </div>
                             </div>
-                            <a href="#" class="nav__link ">
+                            <a href="TrackOrder" class="nav__link ">
                                 <i class='bx bx-current-location nav__icon' ></i>
                                 <span class="nav__name">Track Order</span>
                             </a>
-                            <a href="#" class="nav__link">
+                            <a href="Reports" class="nav__link">
                                 <i class='bx bxs-report nav__icon' ></i>
                                 <span class="nav__name">Reports</span>
                             </a>
@@ -117,7 +117,7 @@
     
                         <div class="nav__items">
                             <h3 class="nav__subtitle">Profile</h3>
-                            <a href="#" class="nav__link">
+                            <a href="ManageAccount" class="nav__link">
                                 <i class='bx bx-compass nav__icon' ></i>
                                 <span class="nav__name">Manage Account</span>
                             </a>
@@ -125,7 +125,7 @@
                     </div>
                 </div>
 
-                <a href="#" class="nav__link nav__logout">
+                <a href="LogOut" class="nav__link nav__logout">
                     <i class='bx bx-log-out nav__icon' ></i>
                     <span class="nav__name">Log Out</span>
                 </a>
@@ -163,9 +163,9 @@
                     <td>8788451215</td>
                     <td>suraj123@gmail.com</td>
                     <td class = "text-center">
-                    	<a href="javascript:void(0)" onclick="location.href='#'" class = "" style = "text-decoration: none;" data-toggle="tooltip" data-placement="bottom" title="View" data-toggle="tooltip" data-placement="bottom" title="View"><i class="material-icons nav__icon">visibility</i></a>
-                    	<a href="javascript:void(0)" onclick="location.href='#'" class = "" style = "text-decoration: none;" data-toggle="tooltip" data-placement="bottom" title="Edit"><i class='bx bx-edit nav__icon ' ></i></a>
-                    	<a href="javascript:void(0)" onclick="location.href='#'" class = "" style = "text-decoration: none;" data-toggle="tooltip" data-placement="bottom" title="Delete"><i class='bx bx-coffee-togo nav__icon' style = "color:red;"></i></a>
+                    	<a href="javascript:void(0)" onclick="location.href='ViewParcel'" class = "" style = "text-decoration: none;" data-toggle="tooltip" data-placement="bottom" title="View" data-toggle="tooltip" data-placement="bottom" title="View"><i class="material-icons nav__icon">visibility</i></a>
+                    	<a href="javascript:void(0)" onclick="location.href='EditParcel'" class = "" style = "text-decoration: none;" data-toggle="tooltip" data-placement="bottom" title="Edit"><i class='bx bx-edit nav__icon ' ></i></a>
+                    	<a href="javascript:void(0)" onclick="location.href='DeleteParcel'" class = "" style = "text-decoration: none;" data-toggle="tooltip" data-placement="bottom" title="Delete"><i class='bx bx-coffee-togo nav__icon' style = "color:red;"></i></a>
                     </td>
                 </tr>
                 <tr>
@@ -175,9 +175,9 @@
                     <td>1846524121</td>
                     <td>akshay123@gmail.com</td>
                     <td class = "text-center">
-                    	<a href="javascript:void(0)" onclick="location.href='#'" class = "" style = "text-decoration: none;" data-toggle="tooltip" data-placement="bottom" title="View"><i class="material-icons nav__icon">visibility</i></a>
-                    	<a href="javascript:void(0)" onclick="location.href='#'" class = "" style = "text-decoration: none;" data-toggle="tooltip" data-placement="bottom" title="Edit"><i class='bx bx-edit nav__icon ' ></i></a>
-                    	<a href="javascript:void(0)" onclick="location.href='#'" class = "" style = "text-decoration: none;" data-toggle="tooltip" data-placement="bottom" title="Delete"><i class='bx bx-coffee-togo nav__icon' style = "color:red;"></i></a>
+                    	<a href="javascript:void(0)" onclick="location.href='ViewParcel'" class = "" style = "text-decoration: none;" data-toggle="tooltip" data-placement="bottom" title="View" data-toggle="tooltip" data-placement="bottom" title="View"><i class="material-icons nav__icon">visibility</i></a>
+                    	<a href="javascript:void(0)" onclick="location.href='EditParcel'" class = "" style = "text-decoration: none;" data-toggle="tooltip" data-placement="bottom" title="Edit"><i class='bx bx-edit nav__icon ' ></i></a>
+                    	<a href="javascript:void(0)" onclick="location.href='DeleteParcel'" class = "" style = "text-decoration: none;" data-toggle="tooltip" data-placement="bottom" title="Delete"><i class='bx bx-coffee-togo nav__icon' style = "color:red;"></i></a>
                     </td>
                 </tr>
                 <tr>
@@ -187,9 +187,9 @@
                     <td>2541251215</td>
                     <td>mayur123@gmail.com</td>
                     <td class = "text-center">
-                    	<a href="javascript:void(0)" onclick="location.href='#'" class = "" style = "text-decoration: none;" data-toggle="tooltip" data-placement="bottom" title="View"><i class="material-icons nav__icon">visibility</i></a>
-                    	<a href="javascript:void(0)" onclick="location.href='#'" class = "" style = "text-decoration: none;" data-toggle="tooltip" data-placement="bottom" title="Edit"><i class='bx bx-edit nav__icon ' ></i></a>
-                    	<a href="javascript:void(0)" onclick="location.href='#'" class = "" style = "text-decoration: none;" data-toggle="tooltip" data-placement="bottom" title="Delete"><i class='bx bx-coffee-togo nav__icon' style = "color:red;"></i></a>
+                    	<a href="javascript:void(0)" onclick="location.href='ViewParcel'" class = "" style = "text-decoration: none;" data-toggle="tooltip" data-placement="bottom" title="View" data-toggle="tooltip" data-placement="bottom" title="View"><i class="material-icons nav__icon">visibility</i></a>
+                    	<a href="javascript:void(0)" onclick="location.href='EditParcel'" class = "" style = "text-decoration: none;" data-toggle="tooltip" data-placement="bottom" title="Edit"><i class='bx bx-edit nav__icon ' ></i></a>
+                    	<a href="javascript:void(0)" onclick="location.href='DeleteParcel'" class = "" style = "text-decoration: none;" data-toggle="tooltip" data-placement="bottom" title="Delete"><i class='bx bx-coffee-togo nav__icon' style = "color:red;"></i></a>
                     </td>
                 </tr>
                 <tr>
@@ -199,9 +199,9 @@
                     <td>2463541515</td>
                     <td>suresh123@gmail.com</td>
                     <td class = "text-center">
-                    	<a href="javascript:void(0)" onclick="location.href='#'" class = "" style = "text-decoration: none;" data-toggle="tooltip" data-placement="bottom" title="View"><i class="material-icons nav__icon">visibility</i></a>
-                    	<a href="javascript:void(0)" onclick="location.href='#'" class = "" style = "text-decoration: none;" data-toggle="tooltip" data-placement="bottom" title="Edit"><i class='bx bx-edit nav__icon ' ></i></a>
-                    	<a href="javascript:void(0)" onclick="location.href='#'" class = "" style = "text-decoration: none;" data-toggle="tooltip" data-placement="bottom" title="Delete"><i class='bx bx-coffee-togo nav__icon' style = "color:red;"></i></a>
+                    	<a href="javascript:void(0)" onclick="location.href='ViewParcel'" class = "" style = "text-decoration: none;" data-toggle="tooltip" data-placement="bottom" title="View" data-toggle="tooltip" data-placement="bottom" title="View"><i class="material-icons nav__icon">visibility</i></a>
+                    	<a href="javascript:void(0)" onclick="location.href='EditParcel'" class = "" style = "text-decoration: none;" data-toggle="tooltip" data-placement="bottom" title="Edit"><i class='bx bx-edit nav__icon ' ></i></a>
+                    	<a href="javascript:void(0)" onclick="location.href='DeleteParcel'" class = "" style = "text-decoration: none;" data-toggle="tooltip" data-placement="bottom" title="Delete"><i class='bx bx-coffee-togo nav__icon' style = "color:red;"></i></a>
                     </td>
                 </tr>
                 <tr>
@@ -211,9 +211,9 @@
                     <td>2168574122</td>
                     <td>vishal123@gmail.com</td>
                     <td class = "text-center">
-                    	<a href="javascript:void(0)" onclick="location.href='#'" class = "" style = "text-decoration: none;" data-toggle="tooltip" data-placement="bottom" title="View"><i class="material-icons nav__icon">visibility</i></a>
-                    	<a href="javascript:void(0)" onclick="location.href='#'" class = "" style = "text-decoration: none;" data-toggle="tooltip" data-placement="bottom" title="Edit"><i class='bx bx-edit nav__icon ' ></i></a>
-                    	<a href="javascript:void(0)" onclick="location.href='#'" class = "" style = "text-decoration: none;" data-toggle="tooltip" data-placement="bottom" title="Delete"><i class='bx bx-coffee-togo nav__icon' style = "color:red;"></i></a>
+                    	<a href="javascript:void(0)" onclick="location.href='ViewParcel'" class = "" style = "text-decoration: none;" data-toggle="tooltip" data-placement="bottom" title="View" data-toggle="tooltip" data-placement="bottom" title="View"><i class="material-icons nav__icon">visibility</i></a>
+                    	<a href="javascript:void(0)" onclick="location.href='EditParcel'" class = "" style = "text-decoration: none;" data-toggle="tooltip" data-placement="bottom" title="Edit"><i class='bx bx-edit nav__icon ' ></i></a>
+                    	<a href="javascript:void(0)" onclick="location.href='DeleteParcel'" class = "" style = "text-decoration: none;" data-toggle="tooltip" data-placement="bottom" title="Delete"><i class='bx bx-coffee-togo nav__icon' style = "color:red;"></i></a>
                     </td>
                 </tr>
                 <tr>
@@ -223,9 +223,9 @@
                     <td>13525010652</td>
                     <td>ajay123@gmail.com</td>
                     <td class = "text-center">
-                    	<a href="javascript:void(0)" onclick="location.href='#'" class = "" style = "text-decoration: none;" data-toggle="tooltip" data-placement="bottom" title="View"><i class="material-icons nav__icon">visibility</i></a>
-                    	<a href="javascript:void(0)" onclick="location.href='#'" class = "" style = "text-decoration: none;" data-toggle="tooltip" data-placement="bottom" title="Edit"><i class='bx bx-edit nav__icon ' ></i></a>
-                    	<a href="javascript:void(0)" onclick="location.href='#'" class = "" style = "text-decoration: none;" data-toggle="tooltip" data-placement="bottom" title="Delete"><i class='bx bx-coffee-togo nav__icon' style = "color:red;"></i></a>
+                    	<a href="javascript:void(0)" onclick="location.href='ViewParcel'" class = "" style = "text-decoration: none;" data-toggle="tooltip" data-placement="bottom" title="View" data-toggle="tooltip" data-placement="bottom" title="View"><i class="material-icons nav__icon">visibility</i></a>
+                    	<a href="javascript:void(0)" onclick="location.href='EditParcel'" class = "" style = "text-decoration: none;" data-toggle="tooltip" data-placement="bottom" title="Edit"><i class='bx bx-edit nav__icon ' ></i></a>
+                    	<a href="javascript:void(0)" onclick="location.href='DeleteParcel'" class = "" style = "text-decoration: none;" data-toggle="tooltip" data-placement="bottom" title="Delete"><i class='bx bx-coffee-togo nav__icon' style = "color:red;"></i></a>
                     </td>
                 </tr>
                 <tr>
@@ -235,9 +235,9 @@
                     <td>8416524121</td>
                     <td>akash123@gmail.com</td>
                     <td class = "text-center">
-                    	<a href="javascript:void(0)" onclick="location.href='#'" class = "" style = "text-decoration: none;" data-toggle="tooltip" data-placement="bottom" title="View"><i class="material-icons nav__icon">visibility</i></a>
-                    	<a href="javascript:void(0)" onclick="location.href='#'" class = "" style = "text-decoration: none;" data-toggle="tooltip" data-placement="bottom" title="Edit"><i class='bx bx-edit nav__icon ' ></i></a>
-                    	<a href="javascript:void(0)" onclick="location.href='#'" class = "" style = "text-decoration: none;" data-toggle="tooltip" data-placement="bottom" title="Delete"><i class='bx bx-coffee-togo nav__icon' style = "color:red;"></i></a>
+                    	<a href="javascript:void(0)" onclick="location.href='ViewParcel'" class = "" style = "text-decoration: none;" data-toggle="tooltip" data-placement="bottom" title="View" data-toggle="tooltip" data-placement="bottom" title="View"><i class="material-icons nav__icon">visibility</i></a>
+                    	<a href="javascript:void(0)" onclick="location.href='EditParcel'" class = "" style = "text-decoration: none;" data-toggle="tooltip" data-placement="bottom" title="Edit"><i class='bx bx-edit nav__icon ' ></i></a>
+                    	<a href="javascript:void(0)" onclick="location.href='DeleteParcel'" class = "" style = "text-decoration: none;" data-toggle="tooltip" data-placement="bottom" title="Delete"><i class='bx bx-coffee-togo nav__icon' style = "color:red;"></i></a>
                     </td>
                 </tr>
                 <tr>
@@ -247,9 +247,9 @@
                     <td>7524151215</td>
                     <td>akash123@gmail.com</td>
                     <td class = "text-center">
-                    	<a href="javascript:void(0)" onclick="location.href='#'" class = "" style = "text-decoration: none;" data-toggle="tooltip" data-placement="bottom" title="View"><i class="material-icons nav__icon">visibility</i></a>
-                    	<a href="javascript:void(0)" onclick="location.href='#'" class = "" style = "text-decoration: none;" data-toggle="tooltip" data-placement="bottom" title="Edit"><i class='bx bx-edit nav__icon ' ></i></a>
-                    	<a href="javascript:void(0)" onclick="location.href='#'" class = "" style = "text-decoration: none;" data-toggle="tooltip" data-placement="bottom" title="Delete"><i class='bx bx-coffee-togo nav__icon' style = "color:red;"></i></a>
+                    	<a href="javascript:void(0)" onclick="location.href='ViewParcel'" class = "" style = "text-decoration: none;" data-toggle="tooltip" data-placement="bottom" title="View" data-toggle="tooltip" data-placement="bottom" title="View"><i class="material-icons nav__icon">visibility</i></a>
+                    	<a href="javascript:void(0)" onclick="location.href='EditParcel'" class = "" style = "text-decoration: none;" data-toggle="tooltip" data-placement="bottom" title="Edit"><i class='bx bx-edit nav__icon ' ></i></a>
+                    	<a href="javascript:void(0)" onclick="location.href='DeleteParcel'" class = "" style = "text-decoration: none;" data-toggle="tooltip" data-placement="bottom" title="Delete"><i class='bx bx-coffee-togo nav__icon' style = "color:red;"></i></a>
                     </td>
                 </tr>
                 <tr>
@@ -259,9 +259,9 @@
                     <td>8653541515</td>
                     <td>sumesh123@gmail.com</td>
                     <td class = "text-center">
-                    	<a href="javascript:void(0)" onclick="location.href='#'" class = "" style = "text-decoration: none;" data-toggle="tooltip" data-placement="bottom" title="View"><i class="material-icons nav__icon">visibility</i></a>
-                    	<a href="javascript:void(0)" onclick="location.href='#'" class = "" style = "text-decoration: none;" data-toggle="tooltip" data-placement="bottom" title="Edit"><i class='bx bx-edit nav__icon ' ></i></a>
-                    	<a href="javascript:void(0)" onclick="location.href='#'" class = "" style = "text-decoration: none;" data-toggle="tooltip" data-placement="bottom" title="Delete"><i class='bx bx-coffee-togo nav__icon' style = "color:red;"></i></a>
+                    	<a href="javascript:void(0)" onclick="location.href='ViewParcel'" class = "" style = "text-decoration: none;" data-toggle="tooltip" data-placement="bottom" title="View" data-toggle="tooltip" data-placement="bottom" title="View"><i class="material-icons nav__icon">visibility</i></a>
+                    	<a href="javascript:void(0)" onclick="location.href='EditParcel'" class = "" style = "text-decoration: none;" data-toggle="tooltip" data-placement="bottom" title="Edit"><i class='bx bx-edit nav__icon ' ></i></a>
+                    	<a href="javascript:void(0)" onclick="location.href='DeleteParcel'" class = "" style = "text-decoration: none;" data-toggle="tooltip" data-placement="bottom" title="Delete"><i class='bx bx-coffee-togo nav__icon' style = "color:red;"></i></a>
                     </td>
                 </tr>
                 <tr>
@@ -271,9 +271,9 @@
                     <td>6118574122</td>
                     <td>gaurav123@gmail.com</td>
                     <td class = "text-center">
-                    	<a href="javascript:void(0)" onclick="location.href='#'" class = "" style = "text-decoration: none;" data-toggle="tooltip" data-placement="bottom" title="View"><i class="material-icons nav__icon">visibility</i></a>
-                    	<a href="javascript:void(0)" onclick="location.href='#'" class = "" style = "text-decoration: none;" data-toggle="tooltip" data-placement="bottom" title="Edit"><i class='bx bx-edit nav__icon ' ></i></a>
-                    	<a href="javascript:void(0)" onclick="location.href='#'" class = "" style = "text-decoration: none;" data-toggle="tooltip" data-placement="bottom" title="Delete"><i class='bx bx-coffee-togo nav__icon' style = "color:red;"></i></a>
+                    	<a href="javascript:void(0)" onclick="location.href='ViewParcel'" class = "" style = "text-decoration: none;" data-toggle="tooltip" data-placement="bottom" title="View" data-toggle="tooltip" data-placement="bottom" title="View"><i class="material-icons nav__icon">visibility</i></a>
+                    	<a href="javascript:void(0)" onclick="location.href='EditParcel'" class = "" style = "text-decoration: none;" data-toggle="tooltip" data-placement="bottom" title="Edit"><i class='bx bx-edit nav__icon ' ></i></a>
+                    	<a href="javascript:void(0)" onclick="location.href='DeleteParcel'" class = "" style = "text-decoration: none;" data-toggle="tooltip" data-placement="bottom" title="Delete"><i class='bx bx-coffee-togo nav__icon' style = "color:red;"></i></a>
                     </td>
                 </tr>
                 <tr>
@@ -283,9 +283,9 @@
                     <td>8755251215</td>
                     <td>shubham123@gmail.com</td>
                     <td class = "text-center">
-                    	<a href="javascript:void(0)" onclick="location.href='#'" class = "" style = "text-decoration: none;" data-toggle="tooltip" data-placement="bottom" title="View"><i class="material-icons nav__icon">visibility</i></a>
-                    	<a href="javascript:void(0)" onclick="location.href='#'" class = "" style = "text-decoration: none;" data-toggle="tooltip" data-placement="bottom" title="Edit"><i class='bx bx-edit nav__icon ' ></i></a>
-                    	<a href="javascript:void(0)" onclick="location.href='#'" class = "" style = "text-decoration: none;" data-toggle="tooltip" data-placement="bottom" title="Delete"><i class='bx bx-coffee-togo nav__icon' style = "color:red;"></i></a>
+                    	<a href="javascript:void(0)" onclick="location.href='ViewParcel'" class = "" style = "text-decoration: none;" data-toggle="tooltip" data-placement="bottom" title="View" data-toggle="tooltip" data-placement="bottom" title="View"><i class="material-icons nav__icon">visibility</i></a>
+                    	<a href="javascript:void(0)" onclick="location.href='EditParcel'" class = "" style = "text-decoration: none;" data-toggle="tooltip" data-placement="bottom" title="Edit"><i class='bx bx-edit nav__icon ' ></i></a>
+                    	<a href="javascript:void(0)" onclick="location.href='DeleteParcel'" class = "" style = "text-decoration: none;" data-toggle="tooltip" data-placement="bottom" title="Delete"><i class='bx bx-coffee-togo nav__icon' style = "color:red;"></i></a>
                     </td>
                 </tr>
             </tbody>
