@@ -137,9 +137,9 @@
                     <td>8788451215</td>
                     <td>suraj123@gmail.com</td>
                     <td class = "text-center">
-                    	<a href="javascript:void(0)" onclick="location.href='ViewParcel'" class = "" style = "text-decoration: none;" data-toggle="tooltip" data-placement="bottom" title="View" data-toggle="tooltip" data-placement="bottom" title="View"><i class="material-icons nav__icon">visibility</i></a>
+                    	<a href="javascript:void(0)" onclick="location.href='SP_ViewParcel'" class = "" style = "text-decoration: none;" data-toggle="tooltip" data-placement="bottom" title="View" data-toggle="tooltip" data-placement="bottom" title="View"><i class="material-icons nav__icon">visibility</i></a>
                     	<a href="javascript:void(0)" onclick="location.href='SP_EditParcel'" class = "" style = "text-decoration: none;" data-toggle="tooltip" data-placement="bottom" title="Edit"><i class='bx bx-edit nav__icon ' ></i></a>
-                    	<a href="javascript:void(0)" onclick="location.href='DeleteParcel'" class = "" style = "text-decoration: none;" data-toggle="tooltip" data-placement="bottom" title="Delete"><i class='bx bx-coffee-togo nav__icon' style = "color:red;"></i></a>
+                    	<a href="javascript:void(0)" onclick="location.href='SP_DeleteParcel'" class = "" style = "text-decoration: none;" data-toggle="tooltip" data-placement="bottom" title="Delete"><i class='bx bx-coffee-togo nav__icon' style = "color:red;"></i></a>
                     </td>
                 </tr>
                 <tr>
@@ -149,9 +149,9 @@
                     <td>1846524121</td>
                     <td>akshay123@gmail.com</td>
                     <td class = "text-center">
-                    	<a href="javascript:void(0)" onclick="location.href='ViewParcel'" class = "" style = "text-decoration: none;" data-toggle="tooltip" data-placement="bottom" title="View" data-toggle="tooltip" data-placement="bottom" title="View"><i class="material-icons nav__icon">visibility</i></a>
+                    	<a href="javascript:void(0)" onclick="location.href='SP_ViewParcel'" class = "" style = "text-decoration: none;" data-toggle="tooltip" data-placement="bottom" title="View" data-toggle="tooltip" data-placement="bottom" title="View"><i class="material-icons nav__icon">visibility</i></a>
                     	<a href="javascript:void(0)" onclick="location.href='SP_EditParcel'" class = "" style = "text-decoration: none;" data-toggle="tooltip" data-placement="bottom" title="Edit"><i class='bx bx-edit nav__icon ' ></i></a>
-                    	<a href="javascript:void(0)" onclick="location.href='DeleteParcel'" class = "" style = "text-decoration: none;" data-toggle="tooltip" data-placement="bottom" title="Delete"><i class='bx bx-coffee-togo nav__icon' style = "color:red;"></i></a>
+                    	<a href="javascript:void(0)" onclick="location.href='SP_DeleteParcel'" class = "" style = "text-decoration: none;" data-toggle="tooltip" data-placement="bottom" title="Delete"><i class='bx bx-coffee-togo nav__icon' style = "color:red;"></i></a>
                     </td>
                 </tr>
                 <tr>
@@ -161,9 +161,9 @@
                     <td>2541251215</td>
                     <td>mayur123@gmail.com</td>
                     <td class = "text-center">
-                    	<a href="javascript:void(0)" onclick="location.href='ViewParcel'" class = "" style = "text-decoration: none;" data-toggle="tooltip" data-placement="bottom" title="View" data-toggle="tooltip" data-placement="bottom" title="View"><i class="material-icons nav__icon">visibility</i></a>
+                    	<a href="javascript:void(0)" onclick="location.href='SP_ViewParcel'" class = "" style = "text-decoration: none;" data-toggle="tooltip" data-placement="bottom" title="View" data-toggle="tooltip" data-placement="bottom" title="View"><i class="material-icons nav__icon">visibility</i></a>
                     	<a href="javascript:void(0)" onclick="location.href='SP_EditParcel'" class = "" style = "text-decoration: none;" data-toggle="tooltip" data-placement="bottom" title="Edit"><i class='bx bx-edit nav__icon ' ></i></a>
-                    	<a href="javascript:void(0)" onclick="location.href='DeleteParcel'" class = "" style = "text-decoration: none;" data-toggle="tooltip" data-placement="bottom" title="Delete"><i class='bx bx-coffee-togo nav__icon' style = "color:red;"></i></a>
+                    	<a href="javascript:void(0)" onclick="location.href='SP_DeleteParcel'" class = "" style = "text-decoration: none;" data-toggle="tooltip" data-placement="bottom" title="Delete"><i class='bx bx-coffee-togo nav__icon' style = "color:red;"></i></a>
                     </td>
                 </tr>
                 <tr>
@@ -173,9 +173,9 @@
                     <td>2463541515</td>
                     <td>suresh123@gmail.com</td>
                     <td class = "text-center">
-                    	<a href="javascript:void(0)" onclick="location.href='ViewParcel'" class = "" style = "text-decoration: none;" data-toggle="tooltip" data-placement="bottom" title="View" data-toggle="tooltip" data-placement="bottom" title="View"><i class="material-icons nav__icon">visibility</i></a>
+                    	<a href="javascript:void(0)" onclick="location.href='SP_ViewParcel'" class = "" style = "text-decoration: none;" data-toggle="tooltip" data-placement="bottom" title="View" data-toggle="tooltip" data-placement="bottom" title="View"><i class="material-icons nav__icon">visibility</i></a>
                     	<a href="javascript:void(0)" onclick="location.href='SP_EditParcel'" class = "" style = "text-decoration: none;" data-toggle="tooltip" data-placement="bottom" title="Edit"><i class='bx bx-edit nav__icon ' ></i></a>
-                    	<a href="javascript:void(0)" onclick="location.href='DeleteParcel'" class = "" style = "text-decoration: none;" data-toggle="tooltip" data-placement="bottom" title="Delete"><i class='bx bx-coffee-togo nav__icon' style = "color:red;"></i></a>
+                    	<a href="javascript:void(0)" onclick="location.href='SP_DeleteParcel'" class = "" style = "text-decoration: none;" data-toggle="tooltip" data-placement="bottom" title="Delete"><i class='bx bx-coffee-togo nav__icon' style = "color:red;"></i></a>
                     </td>
                 </tr>
                 <tr>
@@ -185,9 +185,9 @@
                     <td>2168574122</td>
                     <td>vishal123@gmail.com</td>
                     <td class = "text-center">
-                    	<a href="javascript:void(0)" onclick="location.href='ViewParcel'" class = "" style = "text-decoration: none;" data-toggle="tooltip" data-placement="bottom" title="View" data-toggle="tooltip" data-placement="bottom" title="View"><i class="material-icons nav__icon">visibility</i></a>
+                    	<a href="javascript:void(0)" onclick="location.href='SP_ViewParcel'" class = "" style = "text-decoration: none;" data-toggle="tooltip" data-placement="bottom" title="View" data-toggle="tooltip" data-placement="bottom" title="View"><i class="material-icons nav__icon">visibility</i></a>
                     	<a href="javascript:void(0)" onclick="location.href='SP_EditParcel'" class = "" style = "text-decoration: none;" data-toggle="tooltip" data-placement="bottom" title="Edit"><i class='bx bx-edit nav__icon ' ></i></a>
-                    	<a href="javascript:void(0)" onclick="location.href='DeleteParcel'" class = "" style = "text-decoration: none;" data-toggle="tooltip" data-placement="bottom" title="Delete"><i class='bx bx-coffee-togo nav__icon' style = "color:red;"></i></a>
+                    	<a href="javascript:void(0)" onclick="location.href='SP_DeleteParcel'" class = "" style = "text-decoration: none;" data-toggle="tooltip" data-placement="bottom" title="Delete"><i class='bx bx-coffee-togo nav__icon' style = "color:red;"></i></a>
                     </td>
                 </tr>
                 <tr>
@@ -197,9 +197,9 @@
                     <td>13525010652</td>
                     <td>ajay123@gmail.com</td>
                     <td class = "text-center">
-                    	<a href="javascript:void(0)" onclick="location.href='ViewParcel'" class = "" style = "text-decoration: none;" data-toggle="tooltip" data-placement="bottom" title="View" data-toggle="tooltip" data-placement="bottom" title="View"><i class="material-icons nav__icon">visibility</i></a>
+                    	<a href="javascript:void(0)" onclick="location.href='SP_ViewParcel'" class = "" style = "text-decoration: none;" data-toggle="tooltip" data-placement="bottom" title="View" data-toggle="tooltip" data-placement="bottom" title="View"><i class="material-icons nav__icon">visibility</i></a>
                     	<a href="javascript:void(0)" onclick="location.href='SP_EditParcel'" class = "" style = "text-decoration: none;" data-toggle="tooltip" data-placement="bottom" title="Edit"><i class='bx bx-edit nav__icon ' ></i></a>
-                    	<a href="javascript:void(0)" onclick="location.href='DeleteParcel'" class = "" style = "text-decoration: none;" data-toggle="tooltip" data-placement="bottom" title="Delete"><i class='bx bx-coffee-togo nav__icon' style = "color:red;"></i></a>
+                    	<a href="javascript:void(0)" onclick="location.href='SP_DeleteParcel'" class = "" style = "text-decoration: none;" data-toggle="tooltip" data-placement="bottom" title="Delete"><i class='bx bx-coffee-togo nav__icon' style = "color:red;"></i></a>
                     </td>
                 </tr>
                 <tr>
@@ -209,9 +209,9 @@
                     <td>8416524121</td>
                     <td>akash123@gmail.com</td>
                     <td class = "text-center">
-                    	<a href="javascript:void(0)" onclick="location.href='ViewParcel'" class = "" style = "text-decoration: none;" data-toggle="tooltip" data-placement="bottom" title="View" data-toggle="tooltip" data-placement="bottom" title="View"><i class="material-icons nav__icon">visibility</i></a>
+                    	<a href="javascript:void(0)" onclick="location.href='SP_ViewParcel'" class = "" style = "text-decoration: none;" data-toggle="tooltip" data-placement="bottom" title="View" data-toggle="tooltip" data-placement="bottom" title="View"><i class="material-icons nav__icon">visibility</i></a>
                     	<a href="javascript:void(0)" onclick="location.href='SP_EditParcel'" class = "" style = "text-decoration: none;" data-toggle="tooltip" data-placement="bottom" title="Edit"><i class='bx bx-edit nav__icon ' ></i></a>
-                    	<a href="javascript:void(0)" onclick="location.href='DeleteParcel'" class = "" style = "text-decoration: none;" data-toggle="tooltip" data-placement="bottom" title="Delete"><i class='bx bx-coffee-togo nav__icon' style = "color:red;"></i></a>
+                    	<a href="javascript:void(0)" onclick="location.href='SP_DeleteParcel'" class = "" style = "text-decoration: none;" data-toggle="tooltip" data-placement="bottom" title="Delete"><i class='bx bx-coffee-togo nav__icon' style = "color:red;"></i></a>
                     </td>
                 </tr>
                 <tr>
@@ -221,9 +221,9 @@
                     <td>7524151215</td>
                     <td>akash123@gmail.com</td>
                     <td class = "text-center">
-                    	<a href="javascript:void(0)" onclick="location.href='ViewParcel'" class = "" style = "text-decoration: none;" data-toggle="tooltip" data-placement="bottom" title="View" data-toggle="tooltip" data-placement="bottom" title="View"><i class="material-icons nav__icon">visibility</i></a>
+                    	<a href="javascript:void(0)" onclick="location.href='SP_ViewParcel'" class = "" style = "text-decoration: none;" data-toggle="tooltip" data-placement="bottom" title="View" data-toggle="tooltip" data-placement="bottom" title="View"><i class="material-icons nav__icon">visibility</i></a>
                     	<a href="javascript:void(0)" onclick="location.href='SP_EditParcel'" class = "" style = "text-decoration: none;" data-toggle="tooltip" data-placement="bottom" title="Edit"><i class='bx bx-edit nav__icon ' ></i></a>
-                    	<a href="javascript:void(0)" onclick="location.href='DeleteParcel'" class = "" style = "text-decoration: none;" data-toggle="tooltip" data-placement="bottom" title="Delete"><i class='bx bx-coffee-togo nav__icon' style = "color:red;"></i></a>
+                    	<a href="javascript:void(0)" onclick="location.href='SP_DeleteParcel'" class = "" style = "text-decoration: none;" data-toggle="tooltip" data-placement="bottom" title="Delete"><i class='bx bx-coffee-togo nav__icon' style = "color:red;"></i></a>
                     </td>
                 </tr>
                 <tr>
@@ -233,9 +233,9 @@
                     <td>8653541515</td>
                     <td>sumesh123@gmail.com</td>
                     <td class = "text-center">
-                    	<a href="javascript:void(0)" onclick="location.href='ViewParcel'" class = "" style = "text-decoration: none;" data-toggle="tooltip" data-placement="bottom" title="View" data-toggle="tooltip" data-placement="bottom" title="View"><i class="material-icons nav__icon">visibility</i></a>
+                    	<a href="javascript:void(0)" onclick="location.href='SP_ViewParcel'" class = "" style = "text-decoration: none;" data-toggle="tooltip" data-placement="bottom" title="View" data-toggle="tooltip" data-placement="bottom" title="View"><i class="material-icons nav__icon">visibility</i></a>
                     	<a href="javascript:void(0)" onclick="location.href='SP_EditParcel'" class = "" style = "text-decoration: none;" data-toggle="tooltip" data-placement="bottom" title="Edit"><i class='bx bx-edit nav__icon ' ></i></a>
-                    	<a href="javascript:void(0)" onclick="location.href='DeleteParcel'" class = "" style = "text-decoration: none;" data-toggle="tooltip" data-placement="bottom" title="Delete"><i class='bx bx-coffee-togo nav__icon' style = "color:red;"></i></a>
+                    	<a href="javascript:void(0)" onclick="location.href='SP_DeleteParcel'" class = "" style = "text-decoration: none;" data-toggle="tooltip" data-placement="bottom" title="Delete"><i class='bx bx-coffee-togo nav__icon' style = "color:red;"></i></a>
                     </td>
                 </tr>
                 <tr>
@@ -245,9 +245,9 @@
                     <td>6118574122</td>
                     <td>gaurav123@gmail.com</td>
                     <td class = "text-center">
-                    	<a href="javascript:void(0)" onclick="location.href='ViewParcel'" class = "" style = "text-decoration: none;" data-toggle="tooltip" data-placement="bottom" title="View" data-toggle="tooltip" data-placement="bottom" title="View"><i class="material-icons nav__icon">visibility</i></a>
+                    	<a href="javascript:void(0)" onclick="location.href='SP_ViewParcel'" class = "" style = "text-decoration: none;" data-toggle="tooltip" data-placement="bottom" title="View" data-toggle="tooltip" data-placement="bottom" title="View"><i class="material-icons nav__icon">visibility</i></a>
                     	<a href="javascript:void(0)" onclick="location.href='SP_EditParcel'" class = "" style = "text-decoration: none;" data-toggle="tooltip" data-placement="bottom" title="Edit"><i class='bx bx-edit nav__icon ' ></i></a>
-                    	<a href="javascript:void(0)" onclick="location.href='DeleteParcel'" class = "" style = "text-decoration: none;" data-toggle="tooltip" data-placement="bottom" title="Delete"><i class='bx bx-coffee-togo nav__icon' style = "color:red;"></i></a>
+                    	<a href="javascript:void(0)" onclick="location.href='SP_DeleteParcel'" class = "" style = "text-decoration: none;" data-toggle="tooltip" data-placement="bottom" title="Delete"><i class='bx bx-coffee-togo nav__icon' style = "color:red;"></i></a>
                     </td>
                 </tr>
                 <tr>
@@ -257,9 +257,9 @@
                     <td>8755251215</td>
                     <td>shubham123@gmail.com</td>
                     <td class = "text-center">
-                    	<a href="javascript:void(0)" onclick="location.href='ViewParcel'" class = "" style = "text-decoration: none;" data-toggle="tooltip" data-placement="bottom" title="View" data-toggle="tooltip" data-placement="bottom" title="View"><i class="material-icons nav__icon">visibility</i></a>
+                    	<a href="javascript:void(0)" onclick="location.href='SP_ViewParcel'" class = "" style = "text-decoration: none;" data-toggle="tooltip" data-placement="bottom" title="View" data-toggle="tooltip" data-placement="bottom" title="View"><i class="material-icons nav__icon">visibility</i></a>
                     	<a href="javascript:void(0)" onclick="location.href='SP_EditParcel'" class = "" style = "text-decoration: none;" data-toggle="tooltip" data-placement="bottom" title="Edit"><i class='bx bx-edit nav__icon ' ></i></a>
-                    	<a href="javascript:void(0)" onclick="location.href='DeleteParcel'" class = "" style = "text-decoration: none;" data-toggle="tooltip" data-placement="bottom" title="Delete"><i class='bx bx-coffee-togo nav__icon' style = "color:red;"></i></a>
+                    	<a href="javascript:void(0)" onclick="location.href='SP_DeleteParcel'" class = "" style = "text-decoration: none;" data-toggle="tooltip" data-placement="bottom" title="Delete"><i class='bx bx-coffee-togo nav__icon' style = "color:red;"></i></a>
                     </td>
                 </tr>
             </tbody>

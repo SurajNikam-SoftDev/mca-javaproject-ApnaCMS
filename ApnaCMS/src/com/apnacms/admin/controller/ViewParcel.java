@@ -8,16 +8,16 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementation class AdminHome
+ * Servlet implementation class ViewParcel
  */
-@WebServlet("/AdminPanel")
-public class AdminHome extends HttpServlet {
+@WebServlet("/ViewParcel")
+public class ViewParcel extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public AdminHome() { 
+    public ViewParcel() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -27,7 +27,7 @@ public class AdminHome extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		request.getRequestDispatcher("Admin/index.jsp").forward(request, response); 
+		request.getRequestDispatcher("Admin/viewparcel.jsp").forward(request, response); 
 	}
 
 	/**

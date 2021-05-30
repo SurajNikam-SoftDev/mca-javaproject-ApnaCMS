@@ -19,10 +19,19 @@
     <link rel="stylesheet" href="./assets/css/style.css">
     <link rel="stylesheet" href="./assets/css/home.css">
     
-    
+   
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.4/css/jquery.dataTables.min.css">
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 </head>
+<style>
+[list]::-webkit-calendar-picker-indicator {
+    display: none;
+  }
+
+datalist{
+	max-height: 100px;
+}
+</style>
 <body>
 	<!--========== HEADER ==========-->
         <header class="header">
@@ -31,8 +40,29 @@
                 <a href="AdminPanel" class="header__logo" style = "text-decoration:none;">Apna Courier Management System - Admin Panel</a>
     
                 <div class="header__search">
-                    <input type="text" placeholder="Search" class="header__input">
-                    <i class='bx bx-search header__icon'></i>
+                    <input list="browsers" name="browser" id="browser" placeholder="Search" class="header__input"><i class='bx bx-search header__icon'></i>
+                    <datalist id="browsers" style = "height: 80vh;">
+					  <option value="Home">
+					  <option value="Add New Branch">
+					  <option value="Branch List">
+					  <option value="Add New Branch Staff">
+					  <option value="Branch Staff List">
+					  <option value="Add New Parcel">
+					  <option value="Parcel List">
+					  <option value="Item Accept By Courier">
+					  <option value="Collected">
+					  <option value="Shipped">
+					  <option value="In-Transit">
+					  <option value="Arrived At Destination">
+					  <option value="Out For Delivery">
+					  <option value="Ready To PickUp">
+					  <option value="Delivery">
+					  <option value="PickUp">
+					  <option value="Unsuccessfully Delivery Attempt">
+					  <option value="Track Order">
+					  <option value="Manage Account">
+					</datalist>
+                    
                 </div>
     
                 <div class="header__toggle">
@@ -139,20 +169,20 @@
         		<div class="col-md-4">
 	                <div class="row">
 	                    <div class="col" style="padding:5px;">
-	               			<div class="card">
+	               			<div class="card" data-toggle="tooltip" data-placement="bottom" title="Total Branch">
 							  <div class="card-header text-center" style = "border-radius:18px 18px 0px 0px;">Total Branch</div>
 							  <div class="card-body">
-							    <b class="card-image"><i class='bx bx-search header__icon'></i></b>
-							    <p class="card-text">1</p>
+							    <b class="card-image"><i class='bx bx-buildings header__icon' style = "color:#002060;"></i></b>
+							    <p class="card-text" style = "color:#002060;">1</p>
 							  </div>
 							</div>
 	                    </div>
 	                    <div class="col" style="padding:5px;">
-	               			<div class="card">
+	               			<div class="card" data-toggle="tooltip" data-placement="bottom" title="Total Staff">
 							  <div class="card-header text-center" style = "border-radius:18px 18px 0px 0px;">Total Staff</div>
 							  <div class="card-body">
-							    <b class="card-image"><i class='bx bx-search header__icon'></i></b>
-							    <p class="card-text">1</p>
+							    <b class="card-image"><i class='bx bxs-group header__icon' style = "color:#002060;"></i></b>
+							    <p class="card-text" style = "color:#002060;">1</p>
 							  </div>
 							</div>
 	                    </div>
@@ -161,21 +191,21 @@
 	            <div class="col-md-4">
 	                <div class="row">
 	                    <div class="col" style="padding:5px;">
-	               			<div class="card">
+	               			<div class="card" data-toggle="tooltip" data-placement="bottom" title="Total Parcel">
 							  <div class="card-header text-center" style = "border-radius:18px 18px 0px 0px;">Total Parcel</div>
 							  <div class="card-body">
-							    <b class="card-image"><i class='bx bx-search header__icon'></i></b>
-							    <p class="card-text">1</p>
+							   	<b class="card-image"><i class='bx bx-box header__icon' style = "color:#002060;"></i></b>
+							    <p class="card-text" style = "color:#002060;">1</p>
 							  </div>
 							</div>
 	                    </div>
 	                    <div class="col" style="padding:5px;">
-	               			<div class="card">
-							  <div class="card-header text-center" style = "border-radius:18px 18px 0px 0px;">Item Accepted By Courier</div>
+	               			<div class="card" data-toggle="tooltip" data-placement="bottom" title="Item Accept By Courier">
+							  <div class="card-header text-center" style = "border-radius:18px 18px 0px 0px;">Item Accept By C.</div>
 							  <div class="card-body">
-							    <b class="card-image"><i class='bx bx-search header__icon'></i></b>
-							    <p class="card-text">1</p>
-							  </div>
+							    <b class="card-image"><i class='bx bx-abacus header__icon' style = "color:#002060;"></i></b>
+							    <p class="card-text" style = "color:#002060;">1</p>
+							  </div> 
 							</div>
 	                    </div>
 	                </div>
@@ -183,20 +213,20 @@
 	            <div class="col-md-4">
 	                <div class="row">
 	                    <div class="col" style="padding:5px;">
-	               			<div class="card">
+	               			<div class="card" data-toggle="tooltip" data-placement="bottom" title="Collected">
 							  <div class="card-header text-center" style = "border-radius:18px 18px 0px 0px;">Collected</div>
 							  <div class="card-body">
-							    <b class="card-image"><i class='bx bx-search header__icon'></i></b>
-							    <p class="card-text">1</p>
+							    <b class="card-image"><i class='bx bx-donate-blood header__icon' style = "color:#002060;"></i></b>
+							    <p class="card-text" style = "color:#002060;">1</p>
 							  </div>
 							</div>
 	                    </div>
 	                    <div class="col" style="padding:5px;">
-	               			<div class="card">
+	               			<div class="card" data-toggle="tooltip" data-placement="bottom" title="Shipped">
 							  <div class="card-header text-center" style = "border-radius:18px 18px 0px 0px;">Shipped</div>
 							  <div class="card-body">
-							    <b class="card-image"><i class='bx bx-search header__icon'></i></b>
-							    <p class="card-text">1</p>
+							    <b class="card-image"><i class='bx bx-trip header__icon' style = "color:#002060;"></i></b>
+							    <p class="card-text" style = "color:#002060;">1</p>
 							  </div>
 							</div>
 	                    </div>
@@ -205,20 +235,20 @@
 	            <div class="col-md-4">
 	                <div class="row">
 	                    <div class="col" style="padding:5px;">
-	               			<div class="card">
+	               			<div class="card" data-toggle="tooltip" data-placement="bottom" title="In-Transit">
 							  <div class="card-header text-center" style = "border-radius:18px 18px 0px 0px;">In-Transit</div>
 							  <div class="card-body">
-							    <b class="card-image"><i class='bx bx-search header__icon'></i></b>
-							    <p class="card-text">1</p>
+							    <b class="card-image"><i class='bx bxs-truck header__icon' style = "color:#002060;"></i></b>
+							    <p class="card-text" style = "color:#002060;">1</p>
 							  </div>
 							</div>
 	                    </div>
 	                    <div class="col" style="padding:5px;">
-	               			<div class="card">
-							  <div class="card-header text-center" style = "border-radius:18px 18px 0px 0px;">Arrived At Destination</div>
+	               			<div class="card" data-toggle="tooltip" data-placement="bottom" title="Arrived At Destination">
+							  <div class="card-header text-center" style = "border-radius:18px 18px 0px 0px;">Arrived Destinat'n</div>
 							  <div class="card-body">
-							    <b class="card-image"><i class='bx bx-search header__icon'></i></b>
-							    <p class="card-text">1</p>
+							    <b class="card-image"><i class='bx bxs-diamond header__icon' style = "color:#002060;"></i></b>
+							    <p class="card-text" style = "color:#002060;">1</p>
 							  </div>
 							</div>
 	                    </div>
@@ -227,20 +257,20 @@
 	            <div class="col-md-4">
 	                <div class="row">
 	                    <div class="col" style="padding:5px;">
-	               			<div class="card">
+	               			<div class="card" data-toggle="tooltip" data-placement="bottom" title="Out For Delivery">
 							  <div class="card-header text-center" style = "border-radius:18px 18px 0px 0px;">Out For Delivery</div>
 							  <div class="card-body">
-							    <b class="card-image"><i class='bx bx-search header__icon'></i></b>
-							    <p class="card-text">1</p>
+							    <b class="card-image"><i class='bx bx-archive-out header__icon' style = "color:#002060;"></i></b>
+							    <p class="card-text" style = "color:#002060;">1</p>
 							  </div>
 							</div>
 	                    </div>
 	                    <div class="col" style="padding:5px;">
-	               			<div class="card">
+	               			<div class="card" data-toggle="tooltip" data-placement="bottom" title="Ready For PickUp">
 							  <div class="card-header text-center" style = "border-radius:18px 18px 0px 0px;">Ready For PickUp</div>
 							  <div class="card-body">
-							    <b class="card-image"><i class='bx bx-search header__icon'></i></b>
-							    <p class="card-text">1</p>
+							    <b class="card-image"><i class='bx bx-layer-plus header__icon' style = "color:#002060;"></i></b>
+							    <p class="card-text" style = "color:#002060;">1</p>
 							  </div>
 							</div>
 	                    </div>
@@ -249,20 +279,20 @@
 	            <div class="col-md-4">
 	                <div class="row">
 	                    <div class="col" style="padding:5px;">
-	               			<div class="card">
+	               			<div class="card" data-toggle="tooltip" data-placement="bottom" title="Delivered">
 							  <div class="card-header text-center" style = "border-radius:18px 18px 0px 0px;">Delivered</div>
 							  <div class="card-body">
-							    <b class="card-image"><i class='bx bx-search header__icon'></i></b>
-							    <p class="card-text">1</p>
+							    <b class="card-image"><i class='bx bxs-arrow-to-bottom header__icon' style = "color:#002060;"></i></b>
+							    <p class="card-text" style = "color:#002060;">1</p>
 							  </div>
 							</div>
 	                    </div>
 	                    <div class="col" style="padding:5px;">
-	               			<div class="card">
+	               			<div class="card" data-toggle="tooltip" data-placement="bottom" title="Picked-Up">
 							  <div class="card-header text-center" style = "border-radius:18px 18px 0px 0px;">Picked-Up</div>
 							  <div class="card-body">
-							    <b class="card-image"><i class='bx bx-search header__icon'></i></b>
-							    <p class="card-text">1</p>
+							    <b class="card-image"><i class='bx bxs-arrow-to-top header__icon' style = "color:#002060;"></i></b>
+							    <p class="card-text" style = "color:#002060;">1</p>
 							  </div>
 							</div>
 	                    </div>
@@ -271,15 +301,15 @@
 	            <div class="col-md-4">
 	                <div class="row">
 	                    <div class="col" style="padding:5px;">
-	               			<div class="card">
+	               			<div class="card" data-toggle="tooltip" data-placement="bottom" title="Unsuccessfully Delivery Arrived">
 							  <div class="card-header text-center" style = "border-radius:18px 18px 0px 0px;">Unsuccessfully Delivery</div>
 							  <div class="card-body">
-							    <b class="card-image"><i class='bx bx-search header__icon'></i></b>
-							    <p class="card-text">1</p>
+							    <b class="card-image"><i class='bx bxl-firebase header__icon' style = "color:#002060;"></i></b>
+							    <p class="card-text" style = "color:#002060;">1</p>
 							  </div>
 							</div>
 	                    </div>
-	                    <div class="col" style="padding:5px;">
+	                    <div class="col" style="padding:5px;"> 
 	               			
 	                    </div>
 	                </div>

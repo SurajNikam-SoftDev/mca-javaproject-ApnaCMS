@@ -23,7 +23,7 @@
 	<div class="container">
 		<div class = "under-construction-container">
 			<div class = "under-construction-header text-center">
-				<h6>ApniDukaan</h6>
+				<h6>ApnaCMS</h6>
 			</div>
 			<div class = "under-construction-body p-3">
 				<div class="spinner-border" role="status" style = "height:15px;width:15px;">

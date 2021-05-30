@@ -139,7 +139,7 @@
                     <td class = "text-center">
                     	<a href="javascript:void(0)" onclick="location.href='ViewParcel'" class = "" style = "text-decoration: none;" data-toggle="tooltip" data-placement="bottom" title="View" data-toggle="tooltip" data-placement="bottom" title="View"><i class="material-icons nav__icon">visibility</i></a>
                     	<a href="javascript:void(0)" onclick="location.href='SP_EditParcel'" class = "" style = "text-decoration: none;" data-toggle="tooltip" data-placement="bottom" title="Edit"><i class='bx bx-edit nav__icon ' ></i></a>
-                    	<a href="javascript:void(0)" onclick="location.href='DeleteParcel'" class = "" style = "text-decoration: none;" data-toggle="tooltip" data-placement="bottom" title="Delete"><i class='bx bx-coffee-togo nav__icon' style = "color:red;"></i></a>
+                    	<a href="javascript:void(0)" onclick="location.href='SP_DeleteParcel'" class = "" style = "text-decoration: none;" data-toggle="tooltip" data-placement="bottom" title="Delete"><i class='bx bx-coffee-togo nav__icon' style = "color:red;"></i></a>
                     </td>
                 </tr>
                 <tr>
@@ -151,7 +151,7 @@
                     <td class = "text-center">
                     	<a href="javascript:void(0)" onclick="location.href='ViewParcel'" class = "" style = "text-decoration: none;" data-toggle="tooltip" data-placement="bottom" title="View" data-toggle="tooltip" data-placement="bottom" title="View"><i class="material-icons nav__icon">visibility</i></a>
                     	<a href="javascript:void(0)" onclick="location.href='SP_EditParcel'" class = "" style = "text-decoration: none;" data-toggle="tooltip" data-placement="bottom" title="Edit"><i class='bx bx-edit nav__icon ' ></i></a>
-                    	<a href="javascript:void(0)" onclick="location.href='DeleteParcel'" class = "" style = "text-decoration: none;" data-toggle="tooltip" data-placement="bottom" title="Delete"><i class='bx bx-coffee-togo nav__icon' style = "color:red;"></i></a>
+                    	<a href="javascript:void(0)" onclick="location.href='SP_DeleteParcel'" class = "" style = "text-decoration: none;" data-toggle="tooltip" data-placement="bottom" title="Delete"><i class='bx bx-coffee-togo nav__icon' style = "color:red;"></i></a>
                     </td>
                 </tr>
                 <tr>
@@ -163,7 +163,7 @@
                     <td class = "text-center">
                     	<a href="javascript:void(0)" onclick="location.href='ViewParcel'" class = "" style = "text-decoration: none;" data-toggle="tooltip" data-placement="bottom" title="View" data-toggle="tooltip" data-placement="bottom" title="View"><i class="material-icons nav__icon">visibility</i></a>
                     	<a href="javascript:void(0)" onclick="location.href='SP_EditParcel'" class = "" style = "text-decoration: none;" data-toggle="tooltip" data-placement="bottom" title="Edit"><i class='bx bx-edit nav__icon ' ></i></a>
-                    	<a href="javascript:void(0)" onclick="location.href='DeleteParcel'" class = "" style = "text-decoration: none;" data-toggle="tooltip" data-placement="bottom" title="Delete"><i class='bx bx-coffee-togo nav__icon' style = "color:red;"></i></a>
+                    	<a href="javascript:void(0)" onclick="location.href='SP_DeleteParcel'" class = "" style = "text-decoration: none;" data-toggle="tooltip" data-placement="bottom" title="Delete"><i class='bx bx-coffee-togo nav__icon' style = "color:red;"></i></a>
                     </td>
                 </tr>
                 <tr>
@@ -175,7 +175,7 @@
                     <td class = "text-center">
                     	<a href="javascript:void(0)" onclick="location.href='ViewParcel'" class = "" style = "text-decoration: none;" data-toggle="tooltip" data-placement="bottom" title="View" data-toggle="tooltip" data-placement="bottom" title="View"><i class="material-icons nav__icon">visibility</i></a>
                     	<a href="javascript:void(0)" onclick="location.href='SP_EditParcel'" class = "" style = "text-decoration: none;" data-toggle="tooltip" data-placement="bottom" title="Edit"><i class='bx bx-edit nav__icon ' ></i></a>
-                    	<a href="javascript:void(0)" onclick="location.href='DeleteParcel'" class = "" style = "text-decoration: none;" data-toggle="tooltip" data-placement="bottom" title="Delete"><i class='bx bx-coffee-togo nav__icon' style = "color:red;"></i></a>
+                    	<a href="javascript:void(0)" onclick="location.href='SP_DeleteParcel'" class = "" style = "text-decoration: none;" data-toggle="tooltip" data-placement="bottom" title="Delete"><i class='bx bx-coffee-togo nav__icon' style = "color:red;"></i></a>
                     </td>
                 </tr>
                 <tr>
@@ -187,7 +187,7 @@
                     <td class = "text-center">
                     	<a href="javascript:void(0)" onclick="location.href='ViewParcel'" class = "" style = "text-decoration: none;" data-toggle="tooltip" data-placement="bottom" title="View" data-toggle="tooltip" data-placement="bottom" title="View"><i class="material-icons nav__icon">visibility</i></a>
                     	<a href="javascript:void(0)" onclick="location.href='SP_EditParcel'" class = "" style = "text-decoration: none;" data-toggle="tooltip" data-placement="bottom" title="Edit"><i class='bx bx-edit nav__icon ' ></i></a>
-                    	<a href="javascript:void(0)" onclick="location.href='DeleteParcel'" class = "" style = "text-decoration: none;" data-toggle="tooltip" data-placement="bottom" title="Delete"><i class='bx bx-coffee-togo nav__icon' style = "color:red;"></i></a>
+                    	<a href="javascript:void(0)" onclick="location.href='SP_DeleteParcel'" class = "" style = "text-decoration: none;" data-toggle="tooltip" data-placement="bottom" title="Delete"><i class='bx bx-coffee-togo nav__icon' style = "color:red;"></i></a>
                     </td>
                 </tr>
                 <tr>
@@ -199,7 +199,7 @@
                     <td class = "text-center">
                     	<a href="javascript:void(0)" onclick="location.href='ViewParcel'" class = "" style = "text-decoration: none;" data-toggle="tooltip" data-placement="bottom" title="View" data-toggle="tooltip" data-placement="bottom" title="View"><i class="material-icons nav__icon">visibility</i></a>
                     	<a href="javascript:void(0)" onclick="location.href='SP_EditParcel'" class = "" style = "text-decoration: none;" data-toggle="tooltip" data-placement="bottom" title="Edit"><i class='bx bx-edit nav__icon ' ></i></a>
-                    	<a href="javascript:void(0)" onclick="location.href='DeleteParcel'" class = "" style = "text-decoration: none;" data-toggle="tooltip" data-placement="bottom" title="Delete"><i class='bx bx-coffee-togo nav__icon' style = "color:red;"></i></a>
+                    	<a href="javascript:void(0)" onclick="location.href='SP_DeleteParcel'" class = "" style = "text-decoration: none;" data-toggle="tooltip" data-placement="bottom" title="Delete"><i class='bx bx-coffee-togo nav__icon' style = "color:red;"></i></a>
                     </td>
                 </tr>
                 <tr>
@@ -211,7 +211,7 @@
                     <td class = "text-center">
                     	<a href="javascript:void(0)" onclick="location.href='ViewParcel'" class = "" style = "text-decoration: none;" data-toggle="tooltip" data-placement="bottom" title="View" data-toggle="tooltip" data-placement="bottom" title="View"><i class="material-icons nav__icon">visibility</i></a>
                     	<a href="javascript:void(0)" onclick="location.href='SP_EditParcel'" class = "" style = "text-decoration: none;" data-toggle="tooltip" data-placement="bottom" title="Edit"><i class='bx bx-edit nav__icon ' ></i></a>
-                    	<a href="javascript:void(0)" onclick="location.href='DeleteParcel'" class = "" style = "text-decoration: none;" data-toggle="tooltip" data-placement="bottom" title="Delete"><i class='bx bx-coffee-togo nav__icon' style = "color:red;"></i></a>
+                    	<a href="javascript:void(0)" onclick="location.href='SP_DeleteParcel'" class = "" style = "text-decoration: none;" data-toggle="tooltip" data-placement="bottom" title="Delete"><i class='bx bx-coffee-togo nav__icon' style = "color:red;"></i></a>
                     </td>
                 </tr>
                 <tr>
@@ -223,7 +223,7 @@
                     <td class = "text-center">
                     	<a href="javascript:void(0)" onclick="location.href='ViewParcel'" class = "" style = "text-decoration: none;" data-toggle="tooltip" data-placement="bottom" title="View" data-toggle="tooltip" data-placement="bottom" title="View"><i class="material-icons nav__icon">visibility</i></a>
                     	<a href="javascript:void(0)" onclick="location.href='SP_EditParcel'" class = "" style = "text-decoration: none;" data-toggle="tooltip" data-placement="bottom" title="Edit"><i class='bx bx-edit nav__icon ' ></i></a>
-                    	<a href="javascript:void(0)" onclick="location.href='DeleteParcel'" class = "" style = "text-decoration: none;" data-toggle="tooltip" data-placement="bottom" title="Delete"><i class='bx bx-coffee-togo nav__icon' style = "color:red;"></i></a>
+                    	<a href="javascript:void(0)" onclick="location.href='SP_DeleteParcel'" class = "" style = "text-decoration: none;" data-toggle="tooltip" data-placement="bottom" title="Delete"><i class='bx bx-coffee-togo nav__icon' style = "color:red;"></i></a>
                     </td>
                 </tr>
                 <tr>
@@ -235,7 +235,7 @@
                     <td class = "text-center">
                     	<a href="javascript:void(0)" onclick="location.href='ViewParcel'" class = "" style = "text-decoration: none;" data-toggle="tooltip" data-placement="bottom" title="View" data-toggle="tooltip" data-placement="bottom" title="View"><i class="material-icons nav__icon">visibility</i></a>
                     	<a href="javascript:void(0)" onclick="location.href='SP_EditParcel'" class = "" style = "text-decoration: none;" data-toggle="tooltip" data-placement="bottom" title="Edit"><i class='bx bx-edit nav__icon ' ></i></a>
-                    	<a href="javascript:void(0)" onclick="location.href='DeleteParcel'" class = "" style = "text-decoration: none;" data-toggle="tooltip" data-placement="bottom" title="Delete"><i class='bx bx-coffee-togo nav__icon' style = "color:red;"></i></a>
+                    	<a href="javascript:void(0)" onclick="location.href='SP_DeleteParcel'" class = "" style = "text-decoration: none;" data-toggle="tooltip" data-placement="bottom" title="Delete"><i class='bx bx-coffee-togo nav__icon' style = "color:red;"></i></a>
                     </td>
                 </tr>
                 <tr>
@@ -247,7 +247,7 @@
                     <td class = "text-center">
                     	<a href="javascript:void(0)" onclick="location.href='ViewParcel'" class = "" style = "text-decoration: none;" data-toggle="tooltip" data-placement="bottom" title="View" data-toggle="tooltip" data-placement="bottom" title="View"><i class="material-icons nav__icon">visibility</i></a>
                     	<a href="javascript:void(0)" onclick="location.href='SP_EditParcel'" class = "" style = "text-decoration: none;" data-toggle="tooltip" data-placement="bottom" title="Edit"><i class='bx bx-edit nav__icon ' ></i></a>
-                    	<a href="javascript:void(0)" onclick="location.href='DeleteParcel'" class = "" style = "text-decoration: none;" data-toggle="tooltip" data-placement="bottom" title="Delete"><i class='bx bx-coffee-togo nav__icon' style = "color:red;"></i></a>
+                    	<a href="javascript:void(0)" onclick="location.href='SP_DeleteParcel'" class = "" style = "text-decoration: none;" data-toggle="tooltip" data-placement="bottom" title="Delete"><i class='bx bx-coffee-togo nav__icon' style = "color:red;"></i></a>
                     </td>
                 </tr>
                 <tr>
@@ -259,7 +259,7 @@
                     <td class = "text-center">
                     	<a href="javascript:void(0)" onclick="location.href='ViewParcel'" class = "" style = "text-decoration: none;" data-toggle="tooltip" data-placement="bottom" title="View" data-toggle="tooltip" data-placement="bottom" title="View"><i class="material-icons nav__icon">visibility</i></a>
                     	<a href="javascript:void(0)" onclick="location.href='SP_EditParcel'" class = "" style = "text-decoration: none;" data-toggle="tooltip" data-placement="bottom" title="Edit"><i class='bx bx-edit nav__icon ' ></i></a>
-                    	<a href="javascript:void(0)" onclick="location.href='DeleteParcel'" class = "" style = "text-decoration: none;" data-toggle="tooltip" data-placement="bottom" title="Delete"><i class='bx bx-coffee-togo nav__icon' style = "color:red;"></i></a>
+                    	<a href="javascript:void(0)" onclick="location.href='SP_DeleteParcel'" class = "" style = "text-decoration: none;" data-toggle="tooltip" data-placement="bottom" title="Delete"><i class='bx bx-coffee-togo nav__icon' style = "color:red;"></i></a>
                     </td>
                 </tr>
             </tbody>

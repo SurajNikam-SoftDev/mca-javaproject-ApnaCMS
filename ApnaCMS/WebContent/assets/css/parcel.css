@@ -1,0 +1,65 @@
+.page-header{
+	background-color: white;
+	box-shadow:1px 1px 1px 1px lightgrey;
+	padding:10px 0px;
+	border-radius:8px;
+}
+
+.parcel-container{
+	border-top:4px solid #007bff;
+	margin-top:15px;
+	padding : 15px;
+	background-color: white;
+	box-shadow:1px 1px 1px 1px lightgrey;
+	border-radius:8px;
+}
+
+.parcel-sub-container{
+	
+	border-left:4px solid #007bff;
+	margin-top:15px;
+	padding : 15px;
+	background-color: white;
+	box-shadow:1px 1px 1px 1px lightgrey;
+	border-radius:3px;
+}
+
+.parcel-header{
+	font-size:medium;
+	font-weight:bolder;
+}
+
+.parcel-card{
+	border-left:4px solid #007bff;
+	margin:3px 0px;
+	padding : 15px;
+	background-color: white;
+	box-shadow:1px 1px 1px 1px lightgrey;
+	border-radius:3px;
+}
+
+input[type=text], select{
+    font-size: 12px;   
+    outline: none;  
+}
+
+label{
+	font-size: 14px;
+	font-weight: bolder; 
+}
+
+.parcel-address{
+	margin-top:-10px;
+	font-size:small; 
+}
+
+.parcel-status{
+	padding:2px 5px;
+	color:white;
+	background-color: #007bff;
+	font-size: xx-small;
+	border-radius: 25px; 
+}
+
+
+

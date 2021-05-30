@@ -25,7 +25,7 @@
 	<div class="container">
 		<div class = "error-container">
 			<div class = "error-header text-center">
-				<h6>ApniDukaan</h6>
+				<h6>ApnaCMS</h6>
 			</div>
 			<div class = "error-body p-3">
 				<b>404 Page Not Found</b>

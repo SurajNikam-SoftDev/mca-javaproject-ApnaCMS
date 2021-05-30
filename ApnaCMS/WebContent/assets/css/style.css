@@ -291,7 +291,7 @@ img {
 /* For small devices reduce search*/
 @media screen and (max-width: 320px) {
   .header__search {
-    width: 70%;
+    width: 60%;
   }
   
 }
@@ -307,7 +307,7 @@ img {
     height: calc(var(--header-height) + .5rem);
   }
   .header__search {
-    width: 300px;
+    width: 250px; 
     padding: .55rem .55rem;
   }
   .header__toggle {

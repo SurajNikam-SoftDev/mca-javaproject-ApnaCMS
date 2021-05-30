@@ -17,14 +17,20 @@
 
 .card-body{	
 	text-align: center;
+	
 }
 
+.header__icon{
+	color:#002060;
+}
+ 
 .card-image {
 	float:left;
 }
 
 .card-text{
+	color:#002060;
 	font-size:large;
 	font-weight: bolder;
-	float:right;
+	float:right; 
 }
