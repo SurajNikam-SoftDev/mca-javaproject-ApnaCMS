@@ -1,3 +1,6 @@
+<%@page import="com.apnacms.admin.dao.BranchStaffDao"%>
+<%@page import="com.apnacms.admin.bean.BranchStaffBean"%>
+<%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8" isErrorPage="true"%>
 <!DOCTYPE html>
@@ -24,11 +27,19 @@
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 </head>
 <body>
+<%
+	if(session.getAttribute("emailid")==null)
+	{
+		response.sendRedirect("./LogIn");
+	}	
+
+	List<BranchStaffBean> list= BranchStaffDao.getAllRecords();
+%>
 	<!--========== HEADER ==========-->
         <header class="header">
             <div class="header__container">
 				
-                <a href="AdminPanel" class="header__logo" style = "text-decoration:none;">Apna Courier Management System - Admin Panel</a>
+                <a href="AdminPanel" class="header__logo" style = "text-decoration:none;">Apna Courier Management System - Admin Panel |<small> Welcome, <%= session.getAttribute("emailid") %></small></a>
     
                 <div class="header__search">
                     <input type="search" placeholder="Search" class="header__input">
@@ -121,6 +132,7 @@
                                 <i class='bx bx-compass nav__icon' ></i>
                                 <span class="nav__name">Manage Account</span>
                             </a>
+                            <small class="nav__subtitle" style = "font-size:12px;"> Welcome, <b style = "text-transform:lowercase;"><%= session.getAttribute("emailid") %></b></small>
                         </div>
                     </div>
                 </div>
@@ -155,127 +167,27 @@
                 </tr>
             </thead>
             <tbody>
+<%
+int cnt = 1;
+for (BranchStaffBean branchstaff: list) {
+	
+	
+%>            
                 <tr>
-                    <td>nikam</td>
-                    <td>8788451215</td>
-                    <td>suraj123@gmail.com</td>
-                    <td>8788451215</td>
+                    <td><%= cnt++ %></td>
+                    <td><%= branchstaff.getName() %></td>
+                    <td><%= branchstaff.getEmail() %></td>
+                    <td><%= BranchStaffDao.getBranchById(branchstaff.getBranch_id()) %></td>
                     <td class = "text-center">
                     	
-                    	<a href="javascript:void(0)" onclick="location.href='EditBranchStaff'" class = "" style = "text-decoration: none;" data-toggle="tooltip" data-placement="bottom" title="Edit"><i class='bx bx-edit nav__icon ' ></i></a>
-                    	<a href="javascript:void(0)" onclick="location.href='DeleteBranchStaff'" class = "" style = "text-decoration: none;" data-toggle="tooltip" data-placement="bottom" title="Delete"><i class='bx bx-coffee-togo nav__icon' style = "color:red;"></i></a>
+                    	<a href="javascript:void(0)" onclick="location.href='EditBranchStaff?key=<%= branchstaff.getCuid() %>'" class = "" style = "text-decoration: none;" data-toggle="tooltip" data-placement="bottom" title="Edit"><i class='bx bx-edit nav__icon ' ></i></a>
+                    	<a href="javascript:void(0)" onclick="location.href='DeleteBranchStaff?key=<%= branchstaff.getCuid() %>'" class = "" style = "text-decoration: none;" data-toggle="tooltip" data-placement="bottom" title="Delete"><i class='bx bx-coffee-togo nav__icon' style = "color:red;"></i></a>
                     </td>
-                </tr>
-                <tr>
-                    <td>nikam</td>
-                    <td>1846524121</td>
-                    <td>akshay123@gmail.com</td>
-                    <td>8788451215</td>
-                    <td class = "text-center">
-                    	
-                    	<a href="javascript:void(0)" onclick="location.href='EditBranchStaff'" class = "" style = "text-decoration: none;" data-toggle="tooltip" data-placement="bottom" title="Edit"><i class='bx bx-edit nav__icon ' ></i></a>
-                    	<a href="javascript:void(0)" onclick="location.href='DeleteBranchStaff'" class = "" style = "text-decoration: none;" data-toggle="tooltip" data-placement="bottom" title="Delete"><i class='bx bx-coffee-togo nav__icon' style = "color:red;"></i></a>
-                    </td>
-                </tr>
-                <tr>
-                    <td>pawale</td>
-                    <td>2541251215</td>
-                    <td>mayur123@gmail.com</td>
-                    <td>8788451215</td>
-                    <td class = "text-center">
-                    	
-                    	<a href="javascript:void(0)" onclick="location.href='EditBranchStaff'" class = "" style = "text-decoration: none;" data-toggle="tooltip" data-placement="bottom" title="Edit"><i class='bx bx-edit nav__icon ' ></i></a>
-                    	<a href="javascript:void(0)" onclick="location.href='DeleteBranchStaff'" class = "" style = "text-decoration: none;" data-toggle="tooltip" data-placement="bottom" title="Delete"><i class='bx bx-coffee-togo nav__icon' style = "color:red;"></i></a>
-                    </td>
-                </tr>
-                <tr>
-                    <td>choudhary</td>
-                    <td>2463541515</td>
-                    <td>suresh123@gmail.com</td>
-                    <td>8788451215</td>
-                    <td class = "text-center">
-                    	
-                    	<a href="javascript:void(0)" onclick="location.href='EditBranchStaff'" class = "" style = "text-decoration: none;" data-toggle="tooltip" data-placement="bottom" title="Edit"><i class='bx bx-edit nav__icon ' ></i></a>
-                    	<a href="javascript:void(0)" onclick="location.href='DeleteBranchStaff'" class = "" style = "text-decoration: none;" data-toggle="tooltip" data-placement="bottom" title="Delete"><i class='bx bx-coffee-togo nav__icon' style = "color:red;"></i></a>
-                    </td>
-                </tr>
-                <tr>
-                    <td>chillal</td>
-                    <td>2168574122</td>
-                    <td>vishal123@gmail.com</td>
-                    <td>8788451215</td>
-                    <td class = "text-center">
-                    	
-                    	<a href="javascript:void(0)" onclick="location.href='EditBranchStaff'" class = "" style = "text-decoration: none;" data-toggle="tooltip" data-placement="bottom" title="Edit"><i class='bx bx-edit nav__icon ' ></i></a>
-                    	<a href="javascript:void(0)" onclick="location.href='DeleteBranchStaff'" class = "" style = "text-decoration: none;" data-toggle="tooltip" data-placement="bottom" title="Delete"><i class='bx bx-coffee-togo nav__icon' style = "color:red;"></i></a>
-                    </td>
-                </tr>
-                <tr>
-                    <td>shinde</td>
-                    <td>13525010652</td>
-                    <td>ajay123@gmail.com</td>
-                    <td>8788451215</td>
-                    <td class = "text-center">
-                    	
-                    	<a href="javascript:void(0)" onclick="location.href='EditBranchStaff'" class = "" style = "text-decoration: none;" data-toggle="tooltip" data-placement="bottom" title="Edit"><i class='bx bx-edit nav__icon ' ></i></a>
-                    	<a href="javascript:void(0)" onclick="location.href='DeleteBranchStaff'" class = "" style = "text-decoration: none;" data-toggle="tooltip" data-placement="bottom" title="Delete"><i class='bx bx-coffee-togo nav__icon' style = "color:red;"></i></a>
-                    </td>
-                </tr>
-                <tr>
-                    <td>shinde</td>
-                    <td>8416524121</td>
-                    <td>akash123@gmail.com</td>
-                    <td>8788451215</td>
-                    <td class = "text-center">
-                    	
-                    	<a href="javascript:void(0)" onclick="location.href='EditBranchStaff'" class = "" style = "text-decoration: none;" data-toggle="tooltip" data-placement="bottom" title="Edit"><i class='bx bx-edit nav__icon ' ></i></a>
-                    	<a href="javascript:void(0)" onclick="location.href='DeleteBranchStaff'" class = "" style = "text-decoration: none;" data-toggle="tooltip" data-placement="bottom" title="Delete"><i class='bx bx-coffee-togo nav__icon' style = "color:red;"></i></a>
-                    </td>
-                </tr>
-                <tr>
-                    <td>mandavkar</td>
-                    <td>7524151215</td>
-                    <td>akash123@gmail.com</td>
-                    <td>8788451215</td>
-                    <td class = "text-center">
-                    	
-                    	<a href="javascript:void(0)" onclick="location.href='EditBranchStaff'" class = "" style = "text-decoration: none;" data-toggle="tooltip" data-placement="bottom" title="Edit"><i class='bx bx-edit nav__icon ' ></i></a>
-                    	<a href="javascript:void(0)" onclick="location.href='DeleteBranchStaff'" class = "" style = "text-decoration: none;" data-toggle="tooltip" data-placement="bottom" title="Delete"><i class='bx bx-coffee-togo nav__icon' style = "color:red;"></i></a>
-                    </td>
-                </tr>
-                <tr>
-                    <td>ojha</td>
-                    <td>8653541515</td>
-                    <td>sumesh123@gmail.com</td>
-                    <td>8788451215</td>
-                    <td class = "text-center">
-                    	
-                    	<a href="javascript:void(0)" onclick="location.href='EditBranchStaff'" class = "" style = "text-decoration: none;" data-toggle="tooltip" data-placement="bottom" title="Edit"><i class='bx bx-edit nav__icon ' ></i></a>
-                    	<a href="javascript:void(0)" onclick="location.href='DeleteBranchStaff'" class = "" style = "text-decoration: none;" data-toggle="tooltip" data-placement="bottom" title="Delete"><i class='bx bx-coffee-togo nav__icon' style = "color:red;"></i></a>
-                    </td>
-                </tr>
-                <tr>
-                    <td>kaveri</td>
-                    <td>6118574122</td>
-                    <td>gaurav123@gmail.com</td>
-                    <td>8788451215</td>
-                    <td class = "text-center">
-                    	
-                    	<a href="javascript:void(0)" onclick="location.href='EditBranchStaff'" class = "" style = "text-decoration: none;" data-toggle="tooltip" data-placement="bottom" title="Edit"><i class='bx bx-edit nav__icon ' ></i></a>
-                    	<a href="javascript:void(0)" onclick="location.href='DeleteBranchStaff'" class = "" style = "text-decoration: none;" data-toggle="tooltip" data-placement="bottom" title="Delete"><i class='bx bx-coffee-togo nav__icon' style = "color:red;"></i></a>
-                    </td>
-                </tr>
-                <tr>
-                    <td>pawar</td>
-                    <td>8755251215</td>
-                    <td>shubham123@gmail.com</td>
-                    <td>8788451215</td>
-                    <td class = "text-center">
-                    	
-                    	<a href="javascript:void(0)" onclick="location.href='EditBranchStaff'" class = "" style = "text-decoration: none;" data-toggle="tooltip" data-placement="bottom" title="Edit"><i class='bx bx-edit nav__icon ' ></i></a>
-                    	<a href="javascript:void(0)" onclick="location.href='DeleteBranchStaff'" class = "" style = "text-decoration: none;" data-toggle="tooltip" data-placement="bottom" title="Delete"><i class='bx bx-coffee-togo nav__icon' style = "color:red;"></i></a>
-                    </td>
-                </tr>
+                </tr> 
+<%
+	}
+%> 
+                
             </tbody>
             <tfoot>
                 <tr>

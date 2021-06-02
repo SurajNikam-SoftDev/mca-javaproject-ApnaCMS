@@ -1,3 +1,6 @@
+<%@page import="com.apnacms.admin.bean.BranchBean"%>
+<%@page import="java.util.List"%>
+<%@page import="com.apnacms.admin.dao.BranchDao"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8" isErrorPage="true"%>
 <!DOCTYPE html>
@@ -22,13 +25,78 @@
     
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.4/css/jquery.dataTables.min.css">
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    
+    <script type = "text/javascript">
+    	function validation(){
+    	/*	var phoneNumber = document.getElementById('contactno').value;
+    		var phoneRGEX = /^[(]{0,1}[0-9]{3}[)]{0,1}[-\s\.]{0,1}[0-9]{3}[-\s\.]{0,1}[0-9]{4}$/;
+    		
+    		var postalCode = document.getElementById('zipcode').value;
+    		var postalRGEX = /^[A-Z]{1,2}[0-9]{1,2} ?[0-9][A-Z]{6}$/i;
+    	*/
+    	
+    		var zippattern="/^\d{6}$/";	//	pincode
+            var mobilepattern='/^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/';	//  mobile number
+            //var email=/^([a-z A-Z 0-9 _\.\-])+\@(([a-z A-Z 0-9\-])+\.)+([a-z A-z 0-9]{3,3})+$/;	//	email
+            
+            
+            if(document.form.firstname.value=='')
+    		{
+    			document.getElementById("errorspan").innerHTML = "Enter First Name";  
+    			return false;
+    		}
+    		else if(document.form.middlename.value=='')
+    		{
+    			document.getElementById("errorspan").innerHTML = "Enter Middle Name";  
+    			return false;
+    		}
+    		else if(document.form.lastname.value=='')
+    		{
+    			document.getElementById("errorspan").innerHTML = "Enter Last Name";  
+    			return false;
+    		} 
+    		else if(document.form.branchname.value== '-1' )
+    		{
+    			document.getElementById("errorspan").innerHTML = "Select Branch";  
+    			return false;
+    		}
+    		else if(document.form.email.value==''){
+    			document.getElementById("errorspan").innerHTML = "Enter Email Id";  
+    			return false;
+    		}
+    		else if(document.form.password.value==''){
+    			document.getElementById("errorspan").innerHTML = "Enter Password";  
+    			return false;
+    		}
+    		else
+    		{
+    			document.getElementById("errorspan").innerHTML = "";
+    			return true;
+    		}
+    		 
+    	} 
+    </script>
 </head>
+<style>
+input[type=password]{
+	font-size:11px;
+}
+</style>
 <body>
+<%
+	if(session.getAttribute("emailid")==null)
+	{
+		response.sendRedirect("./LogIn");
+	}	
+
+	List<BranchBean> list= BranchDao.getAllBranches();
+%>
+
 	<!--========== HEADER ==========-->
         <header class="header">
             <div class="header__container">
 				
-                <a href="AdminPanel" class="header__logo" style = "text-decoration:none;">Apna Courier Management System - Admin Panel</a>
+                <a href="AdminPanel" class="header__logo" style = "text-decoration:none;">Apna Courier Management System - Admin Panel |<small> Welcome, <%= session.getAttribute("emailid") %></small></a>
     
                 <div class="header__search">
                     <input type="search" placeholder="Search" class="header__input">
@@ -121,6 +189,7 @@
                                 <i class='bx bx-compass nav__icon' ></i>
                                 <span class="nav__name">Manage Account</span>
                             </a>
+                            <small class="nav__subtitle" style = "font-size:12px;"> Welcome, <b style = "text-transform:lowercase;"><%= session.getAttribute("emailid") %></b></small>
                         </div>
                     </div>
                 </div>
@@ -140,26 +209,34 @@
         </div>
         <div class = "container-fluid form-container">
         	
-        <form class = "form-body">
+        <form class = "form-body" name = "form" action = "./AddNewBranchStaff" method = "POST" >
             
            
             <div class="form-row">
-                <div class="form-group col-md-6">
-                    <label for="productprice">First Name</label>
-                    <input type="text" class="form-control" name="firstname" placeholder="First Name">
+                <div class="form-group col-md-4">
+                    <label for="firstname">First Name</label>
+                    <input type="text" class="form-control" name="firstname" placeholder="First Name" style = "text-transform: uppercase;">
                 </div>
-                <div class="form-group col-md-6">
+                <div class="form-group col-md-4">
+                    <label for="middlename">Middle Name</label>
+                    <input type="text" class="form-control" name="middlename" placeholder="Middle Name" style = "text-transform: uppercase;">
+                </div>
+                <div class="form-group col-md-4">
                     <label for="productprice">Last Name</label>
-                    <input type="text" class="form-control" name="lastname" placeholder="Last Name">
+                    <input type="text" class="form-control" name="lastname" placeholder="Last Name" style = "text-transform: uppercase;">
                 </div>
             </div>
             <div class="form-group">
                 <label for="inputAddress">Branch</label>
-                <select name="category" class="form-control" style = "font-size: 12px;">
+                <select name="branchname" class="form-control" style = "font-size: 12px;">
                     <option selected>Choose Branch...</option>
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
+                    <%
+                    for (BranchBean branch: list) { 	
+                    %>
+                    <option value = "<%= branch.getBid()%>"><%= branch.getBranch_code() +" - "+ branch.getStreetbuilding() +", "+ branch.getState() +", "+ branch.getCity() +", "+ branch.getZipcode()%></option>
+                    <%
+                    	}
+                    %>
                 </select>
             </div>
 			<div class="form-group">
@@ -168,39 +245,19 @@
             </div>
             <div class="form-group">
                 <label for="inputAddress">Password</label>
-                <input type="text" class="form-control" name="password" placeholder="Password">
+                <input type="password" class="form-control" name="password" placeholder="Password">
             </div>
             
-            
+             
             <div class = "text-center">
                 <!-- Button trigger modal -->
-                <button type="button" class="btn btn-primary form-control"  data-toggle="modal" data-target="#exampleModalCenter" style = "font-size: 12px;font-weight: bolder;" >Submit</button>
+                <button type="submit" class="btn btn-primary form-control"  data-toggle="modal" data-target="#exampleModalCenter" style = "font-size: 12px;font-weight: bolder;" onclick = "return validation()">Submit</button>
             </div>
-            
-            <!-- Modal -->
-            <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-                <div class="modal-dialog modal-dialog-centered" role="document">
-                <div class="modal-content">
-                    <div class="modal-header text-center">
-                    <h5 class="modal-title" id="exampleModalLongTitle">Confirmation</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                    </div>
-                    <div class="modal-body text-center">
-                   		You Want To Save Data
-                    </div>
-                    <div class="modal-footer">
-                    <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button> -->
-                        <button type="button" class="btn btn-danger" data-dismiss="modal" aria-label="Close">No</button>
-                        <button type="button" class="btn btn-primary" >Yes</button>
-                    </div>
-                </div>
-                </div>
-            </div>
-            
+           
         </form>
-        
+        	<div class = "text-center p-2">
+	        	<span id = "errorspan" style = "font-size:small;font-weight:bolder;color:red"></span>
+	        </div>
         
         
         </div>

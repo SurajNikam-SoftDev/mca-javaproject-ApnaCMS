@@ -5,7 +5,7 @@
 <head>
 	<meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>ApnaCMS :: Login</title>
+    <title>ApnaCMS :: LogIn</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
 
 	 <!-- Bootstrap CSS -->
@@ -30,7 +30,7 @@
 					<b class = "p-3">Log In</b>
 				</div>
 				<hr> 
-				<form action="./AdminPanel" method = "POST"> 
+				<form action="./LogIn" method = "POST"> 
 					<div class="form-group">
 						<label for="email_id">Email address</label> <input type="email"
 								class="form-control" name="email_id"

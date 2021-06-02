@@ -1,3 +1,5 @@
+<%@page import="com.apnacms.admin.dao.BranchDao"%>
+<%@page import="com.apnacms.admin.bean.BranchBean"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8" isErrorPage="true"%>
 <!DOCTYPE html>
@@ -22,13 +24,67 @@
     
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.4/css/jquery.dataTables.min.css">
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    
+    <script src="./assets/js/countries.js"></script>
+    
+    <script type = "text/javascript">
+    	function validation(){
+    			
+    		var zippattern="/^\d{6}$/";	//	pincode
+            var mobilepattern='/^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/';	//  mobile number
+            //var email=/^([a-z A-Z 0-9 _\.\-])+\@(([a-z A-Z 0-9\-])+\.)+([a-z A-z 0-9]{3,3})+$/;	//	email
+
+ 
+            if(document.form.streetbuilding.value==0)
+    		{
+    			document.getElementById("errorspan").innerHTML = "Enter Street/Building";  
+    			return false;
+    		}
+    		else if(document.form.state.value==-1)
+    		{
+    			document.getElementById("errorspan").innerHTML = "Select State First";  
+    			return false;
+    		}
+    		else if(document.form.city.value=='')
+    		{
+    			document.getElementById("errorspan").innerHTML = "Select City";  
+    			return false;
+    		} 
+    		else if(document.form.zipcode.value=='')
+    		{
+    			document.getElementById("errorspan").innerHTML = "Enter ZipCode";  
+    			return false;
+    		}
+    		else if(document.form.contactno.value==''){
+    			document.getElementById("errorspan").innerHTML = "Enter Contact Number";  
+    			return false;
+    		}
+    		else
+    		{
+    			document.getElementById("errorspan").innerHTML = "";
+    			return true;
+    		}
+    	} 
+    </script>
+    
 </head>
 <body>
+<%
+	if(session.getAttribute("emailid")==null)
+	{
+		response.sendRedirect("./LogIn");
+	}	
+
+	String key = request.getParameter("key")!=null || request.getParameter("key")!="" ? request.getParameter("key") : "undefined" ;
+	key = key.isEmpty()?"undefined":key;
+	
+	BranchBean bb = BranchDao.getAllRecordsById(key);
+%>
 	<!--========== HEADER ==========-->
         <header class="header">
             <div class="header__container">
 				
-                <a href="AdminPanel" class="header__logo" style = "text-decoration:none;">Apna Courier Management System - Admin Panel</a>
+                <a href="AdminPanel" class="header__logo" style = "text-decoration:none;">Apna Courier Management System - Admin Panel |<small> Welcome, <%= session.getAttribute("emailid") %></small></a>
     
                 <div class="header__search">
                     <input type="search" placeholder="Search" class="header__input">
@@ -121,6 +177,7 @@
                                 <i class='bx bx-compass nav__icon' ></i>
                                 <span class="nav__name">Manage Account</span>
                             </a>
+                            <small class="nav__subtitle" style = "font-size:12px;"> Welcome, <b style = "text-transform:lowercase;"><%= session.getAttribute("emailid") %></b></small>
                         </div>
                     </div>
                 </div>
@@ -140,83 +197,55 @@
         </div>
         <div class = "container-fluid form-container">
         	
-        <form class = "form-body">
+        <form class = "form-body" name = "form" action = "./EditBranch" method = "POST">
             <div class="form-group">
-                <label for="inputAddress">Street/Building</label>
-                <input type="text" class="form-control" name="streetbuilding" placeholder="Street/Building">
+                <label for="inputAddress">Street/Building<span style = "color:red;font-size:14px;font-weight:bolder;">*</span></label>
+                <input type="text" class="form-control" name="streetbuilding" id = "streetbuilding" placeholder="Street/Building" value = "<%= bb.getStreetbuilding()%>">
             </div>
            
-            <div class="form-row">
+            <div class="form-row"> 
                 <div class="form-group col-md-6">
-                    <label for="productprice">Country</label>
-                    <select name="category" class="form-control" style = "font-size: 12px;">
-                    <option selected>Choose Country...</option>
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
+                    <label for="productprice">Country<span style = "color:red;font-size:14px;font-weight:bolder;">*</span></label>
+                    <select class="form-control" name = "country" style = "font-size: 12px;">
+                    	<option selected><%= bb.getCountry() %></option>
                     </select>
                 </div>
                 <div class="form-group col-md-6">
-                    <label for="productprice">State</label>
-                    <select name="category" class="form-control" style = "font-size: 12px;">
-                    <option selected>Choose State...</option>
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
+                    <label for="productprice">State<span style = "color:red;font-size:14px;font-weight:bolder;">*</span></label>
+                    <select id="state" name ="state"  class="form-control" style = "font-size: 12px;">
+                    	<option selected>Choose State</option>
                     </select>
                 </div>
             </div>
 			<div class="form-row">
                 <div class="form-group col-md-4">
-                    <label for="productprice">City</label>
-                    <select name="category" class="form-control" style = "font-size: 12px;">
-                    <option selected>Choose City...</option>
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
+                    <label for="productprice">City<span style = "color:red;font-size:14px;font-weight:bolder;">*</span></label>
+                    <select name ="city" id ="city" class="form-control" style = "font-size: 12px;">
+                    <option selected>Choose City</option>
+                    
                     </select>
                 </div>
                 <div class="form-group col-md-4">
-                    <label for="productprice">ZipCode</label>
-                    <input type="text" class="form-control" name="productprice" placeholder="ZipCode">
+                    <label for="productprice">ZipCode<span style = "color:red;font-size:14px;font-weight:bolder;">*</span></label>
+                    <input type="text" class="form-control"  id = "zipcode" name="zipcode" placeholder="ZipCode" value = "<%= bb.getZipcode() %>">
                 </div>
                 <div class="form-group col-md-4">
-                    <label for="productprice">Contact No</label>
-                    <input type="text" class="form-control" name="productprice" placeholder="Contact No">
+                    <label for="productprice">Contact No<span style = "color:red;font-size:14px;font-weight:bolder;">*</span></label>
+                    <input type="text" class="form-control" id = "contactno" name="contactno" placeholder="Contact No" value = "<%= bb.getContactno() %>">
                 </div>
             </div>
-            
-            
+            <input type= "hidden" name = "key" value = "<%= key %>">
+            <input type= "hidden" name = "key" value = "<%= key %>">
             <div class = "text-center">
                 <!-- Button trigger modal -->
-                <button type="button" class="btn btn-primary form-control"  data-toggle="modal" data-target="#exampleModalCenter" style = "font-size: 12px;font-weight: bolder;" >Submit</button>
-            </div>
-            
-            <!-- Modal -->
-            <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-                <div class="modal-dialog modal-dialog-centered" role="document">
-                <div class="modal-content">
-                    <div class="modal-header text-center">
-                    <h5 class="modal-title" id="exampleModalLongTitle">Confirmation</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                    </div>
-                    <div class="modal-body text-center">
-                   		You Want To Save Data
-                    </div>
-                    <div class="modal-footer">
-                    <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button> -->
-                        <button type="button" class="btn btn-danger" data-dismiss="modal" aria-label="Close">No</button>
-                        <button type="button" class="btn btn-primary" >Yes</button>
-                    </div>
-                </div>
-                </div>
+                <input type="submit" class="btn btn-primary form-control"  data-toggle="modal" data-target="#exampleModalCenter" style = "font-size: 12px;font-weight: bolder;" onclick = "return validation()">
             </div>
             
         </form>
         
-        
+        	<div class = "text-center p-2">
+	        	<span id = "errorspan" style = "font-size:small;font-weight:bolder;color:red"></span>
+	        </div>
         
         </div>
         
@@ -236,5 +265,9 @@
     
     <script src="https://cdn.datatables.net/1.10.4/js/jquery.dataTables.min.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    
+    <script type="text/javascript">
+    	populateStates("state", "city");
+	</script>
 </body>
 </html>

@@ -33,11 +33,17 @@ datalist{
 }
 </style>
 <body>
+<%
+	if(session.getAttribute("emailid")==null)
+	{
+		response.sendRedirect("./LogIn");
+	}	
+%>
 	<!--========== HEADER ==========-->
         <header class="header">
             <div class="header__container">
 				
-                <a href="AdminPanel" class="header__logo" style = "text-decoration:none;">Apna Courier Management System - Admin Panel</a>
+                <a href="AdminPanel" class="header__logo" style = "text-decoration:none;">Apna Courier Management System - Admin Panel |<small> Welcome, <%= session.getAttribute("emailid") %></small></a>
     
                 <div class="header__search">
                     <input list="browsers" name="browser" id="browser" placeholder="Search" class="header__input"><i class='bx bx-search header__icon'></i>
@@ -78,8 +84,9 @@ datalist{
                     <a href="AdminPanel" class="nav__link nav__logo" >
                         <i class='bx bx-mask nav__icon' ></i>
                         <span class="nav__logo-name">AdminPanel</span>
+                        
                     </a>
-    				<div class="nav__list">
+                    <div class="nav__list">
                         <div class="nav__items">
                             <h3 class="nav__subtitle">Menu</h3> 
     						<a href="AdminPanel" class="nav__link active">
@@ -151,6 +158,7 @@ datalist{
                                 <i class='bx bx-compass nav__icon' ></i>
                                 <span class="nav__name">Manage Account</span>
                             </a>
+                            <small class="nav__subtitle" style = "font-size:12px;"> Welcome, <b style = "text-transform:lowercase;"><%= session.getAttribute("emailid") %></b></small>
                         </div>
                     </div>
                 </div>
