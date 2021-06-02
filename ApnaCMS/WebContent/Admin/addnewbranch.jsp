@@ -250,7 +250,7 @@
             
             <div class = "text-center">
                 <!-- Button trigger modal -->
-                <button type="submit" class="btn btn-primary form-control"  data-toggle="modal" data-target="#exampleModalCenter" style = "font-size: 12px;font-weight: bolder;" onclick = "return validation()">Submit</button>
+                <button type="submit" class="btn btn-primary form-control" style = "font-size: 12px;font-weight: bolder;" onclick = "return validation()">Submit</button>
             </div> 
              
             <!-- Modal -->

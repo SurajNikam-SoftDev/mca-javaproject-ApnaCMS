@@ -3,6 +3,10 @@ package com.apnacms.admin.bean;
 import java.io.Serializable;
 
 public class BranchStaffBean implements Serializable {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private int id;
 	private String cuid, name, email, password, type, branch_id, date_created;
 	public int getId() {

@@ -1,12 +1,12 @@
 package com.apnacms.admin.dao;
 
 import java.sql.Connection;
+
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.apnacms.admin.bean.BranchBean;
 import com.apnacms.admin.bean.BranchStaffBean;
 import com.apnacms.dbconnection.DBConnection;
 import com.apnacms.features.AES256;
@@ -19,7 +19,7 @@ public class BranchStaffDao {
 		try{
 			 Connection con = DBConnection.getConnection();
 			 PreparedStatement ps = con.prepareStatement("insert into courieruser(name, email, password, branch_id) values(?,?,?,?)");
-			 System.out.println("insert into courieruser(name, email, password, branch_id) values ('" + bsb.getName()+ "','" + bsb.getEmail() + "','" + AES256.encrypt(bsb.getPassword()) + "','" + bsb.getBranch_id() + "')");
+//			 System.out.println("insert into courieruser(name, email, password, branch_id) values ('" + bsb.getName()+ "','" + bsb.getEmail() + "','" + AES256.encrypt(bsb.getPassword()) + "','" + bsb.getBranch_id() + "')");
 
 			 ps.setString(1, bsb.getName().toUpperCase());
 			 ps.setString(2, bsb.getEmail());
@@ -108,7 +108,7 @@ public class BranchStaffDao {
 				 bsb.setBranch_id(rs.getString("branch_id"));
 				 bsb.setPassword(AES256.decrypt(rs.getString("password")));
 				 
-				 System.out.println(rs.getString("cuid") +" :: "+rs.getString("name") +" :: "+rs.getString("email") +" :: "+rs.getString("branch_id") +" :: "+rs.getString("password"));
+//				 System.out.println(rs.getString("cuid") +" :: "+rs.getString("name") +" :: "+rs.getString("email") +" :: "+rs.getString("branch_id") +" :: "+rs.getString("password"));
 		    } 
 			 
 			ps.close();
@@ -128,7 +128,7 @@ public class BranchStaffDao {
 			 Connection con = DBConnection.getConnection();
 			 
 			 PreparedStatement ps = con.prepareStatement("update courieruser set name = ?, email = ?, password = ?, branch_id = ?  where cuid = ?");
-			 System.out.println("update courieruser set name = '"+bsb.getName()+"', email = '"+bsb.getEmail()+"', password = '"+AES256.encrypt(bsb.getPassword())+"', branch_id = '"+bsb.getBranch_id()+"'  where cuid = '"+bsb.getCuid()+"'");
+//			 System.out.println("update courieruser set name = '"+bsb.getName()+"', email = '"+bsb.getEmail()+"', password = '"+AES256.encrypt(bsb.getPassword())+"', branch_id = '"+bsb.getBranch_id()+"'  where cuid = '"+bsb.getCuid()+"'");
 			 ps.setString(1, bsb.getName());
 			 ps.setString(2, bsb.getEmail());
 			 ps.setString(3, AES256.encrypt(bsb.getPassword()));
@@ -144,7 +144,7 @@ public class BranchStaffDao {
 			 e.printStackTrace();
 		}
 		 return status;
-	}
+	} 
 	
 	public static int delete(int id)
 	{

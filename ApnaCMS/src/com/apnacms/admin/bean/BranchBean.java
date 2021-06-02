@@ -3,6 +3,10 @@ package com.apnacms.admin.bean;
 import java.io.Serializable;
 
 public class BranchBean implements Serializable{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private int id;
 	private String branch_code, streetbuilding ,country ,state ,city , zipcode, contactno, date_created, bid;
 	

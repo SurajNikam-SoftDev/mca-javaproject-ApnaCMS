@@ -78,6 +78,8 @@
 	String key = request.getParameter("key")!=null || request.getParameter("key")!="" ? request.getParameter("key") : "undefined" ;
 	key = key.isEmpty()?"undefined":key;
 	
+	
+	System.out.println("key ::"+key);
 	BranchBean bb = BranchDao.getAllRecordsById(key);
 %>
 	<!--========== HEADER ==========-->
@@ -234,7 +236,6 @@
                     <input type="text" class="form-control" id = "contactno" name="contactno" placeholder="Contact No" value = "<%= bb.getContactno() %>">
                 </div>
             </div>
-            <input type= "hidden" name = "key" value = "<%= key %>">
             <input type= "hidden" name = "key" value = "<%= key %>">
             <div class = "text-center">
                 <!-- Button trigger modal -->

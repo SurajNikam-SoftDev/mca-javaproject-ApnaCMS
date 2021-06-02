@@ -118,17 +118,17 @@ public class BranchDao
 	
 	public static BranchBean getAllRecordsById(String id)
 	{
+//		System.out.println("id ::"+id);
 		BranchBean bb= new BranchBean();
 		try {
 			Connection con = DBConnection.getConnection();
 			PreparedStatement ps= con.prepareStatement("select * from branches where bid = ? AND type = 2");
-			ps.setString(1, "1");
+			ps.setString(1, id);
 			ResultSet rs = ps.executeQuery(); 
 			 
 			while(rs.next())
 			{
-				 
-				 bb.setBid(AES256.encrypt(String.valueOf(rs.getInt("bid"))));
+				 bb.setBid(rs.getString("bid"));
 				 bb.setBranch_code(AES256.decrypt(rs.getString("branch_code")));  
 		         bb.setStreetbuilding(rs.getString("street"));
 		         bb.setState(rs.getString("state"));
@@ -136,11 +136,12 @@ public class BranchDao
 		         bb.setZipcode(rs.getString("zipcode")); 
 		         bb.setCountry(rs.getString("country"));
 		         bb.setContactno(rs.getString("contact_no"));
-		         bb.setDate_created(rs.getString("date_created"));
-		             
-		         
-			}
-			
+		         bb.setDate_created(rs.getString(""));
+/*		         System.out.println(rs.getString("bid") +" :: "+AES256.decrypt(rs.getString("branch_code"))
+		         +" :: "+rs.getString("street") +" :: "+rs.getString("state") +" :: "+rs.getString("city")
+		         +" :: "+rs.getString("zipcode") +" :: "+rs.getString("contact_no") +" :: "+rs.getString("date_created"));
+*/			} 
+			 
 			ps.close();
 			con.close();
 		}
