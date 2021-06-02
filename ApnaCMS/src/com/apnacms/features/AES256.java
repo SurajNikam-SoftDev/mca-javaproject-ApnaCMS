@@ -60,6 +60,6 @@ public class AES256 {
   {
 	  System.out.println(encrypt("admincms"));
 	  System.out.println(encrypt("999999"));
-	  System.out.println(decrypt("uCxUmcHOQNsWZ3HmcRNMOg=="));
+	  System.out.println(decrypt("yykOmpLYMdKSV/6MfNd9VQ=="));
   }
 }

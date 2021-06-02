@@ -214,20 +214,20 @@ input[type=password]{
            
             <div class="form-row">
                 <div class="form-group col-md-4">
-                    <label for="firstname">First Name</label>
+                    <label for="firstname">First Name<span style = "color:red;font-size:14px;font-weight:bolder;">*</span></label>
                     <input type="text" class="form-control" name="firstname" placeholder="First Name" style = "text-transform: uppercase;">
                 </div>
                 <div class="form-group col-md-4">
-                    <label for="middlename">Middle Name</label>
+                    <label for="middlename">Middle Name<span style = "color:red;font-size:14px;font-weight:bolder;">*</span></label>
                     <input type="text" class="form-control" name="middlename" placeholder="Middle Name" style = "text-transform: uppercase;">
                 </div>
                 <div class="form-group col-md-4">
-                    <label for="productprice">Last Name</label>
+                    <label for="productprice">Last Name<span style = "color:red;font-size:14px;font-weight:bolder;">*</span></label>
                     <input type="text" class="form-control" name="lastname" placeholder="Last Name" style = "text-transform: uppercase;">
                 </div>
             </div>
             <div class="form-group">
-                <label for="inputAddress">Branch</label>
+                <label for="inputAddress">Branch<span style = "color:red;font-size:14px;font-weight:bolder;">*</span></label>
                 <select name="branchname" class="form-control" style = "font-size: 12px;">
                     <option selected>Choose Branch...</option>
                     <%
@@ -240,11 +240,11 @@ input[type=password]{
                 </select>
             </div>
 			<div class="form-group">
-                <label for="inputAddress">Email</label>
+                <label for="inputAddress">Email<span style = "color:red;font-size:14px;font-weight:bolder;">*</span></label>
                 <input type="text" class="form-control" name="email" placeholder="Email">
             </div>
             <div class="form-group">
-                <label for="inputAddress">Password</label>
+                <label for="inputAddress">Password<span style = "color:red;font-size:14px;font-weight:bolder;">*</span></label>
                 <input type="password" class="form-control" name="password" placeholder="Password">
             </div>
             
