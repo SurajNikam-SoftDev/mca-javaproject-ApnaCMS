@@ -193,14 +193,14 @@
 				<div class = "row mt-2">
 					<div class = "col-md-2">
 						<div class="form-group">
-		                	<label for="" class="control-label">Weight</label>
-		                	<input type="text" name="weight" id="" class="form-control form-control-sm" placeholder="Weight" required="">
+		                	<label for="" class="control-label">Height</label>
+		                	<input type="text" name="height" id="" class="form-control form-control-sm" placeholder="Height" required="">
 		              	</div>
 					</div>
 					<div class = "col-md-2">
 						<div class="form-group">
-		                	<label for="" class="control-label">Height</label>
-		                	<input type="text" name="height" id="" class="form-control form-control-sm" placeholder="Height" required="">
+		                	<label for="" class="control-label">Weight<span style = "color:red;font-size:14px;font-weight:bolder;">*</span></label>
+		                	<input type="text" name="weight" id="" class="form-control form-control-sm" placeholder="Weight" required="">
 		              	</div>
 					</div>
 					<div class = "col-md-2">
@@ -217,14 +217,14 @@
 					</div>
 					<div class = "col-md-2">
 						<div class="form-group">
-		                	<label for="" class="control-label">Price</label>
+		                	<label for="" class="control-label">Price<span style = "color:red;font-size:14px;font-weight:bolder;">*</span></label>
 		                	<input type="text" name="price" id="" class="form-control form-control-sm" value="Price" required="">
 		              	</div>
 					</div>
 					<div class = "col-md-2">
 						<div class="form-group">
-		                	<label for="" class="control-label">Type</label>
-		                	<input type="text" name="type" id="" class="form-control form-control-sm" value="Type" required="">
+		                	<label for="" class="control-label">Total<span style = "color:red;font-size:14px;font-weight:bolder;">*</span></label>
+		                	<input type="text" name="total" id="" class="form-control form-control-sm" value="Type" required="">
 		              	</div>
 					</div>
 					<div class = "col-md-12">
@@ -256,7 +256,7 @@
 								<option value="6">Ready to Pickup</option>
 								<option value="7">Delivered</option>
 								<option value="8">Picked-up</option>
-								<option value="9">Unsuccessfull Delivery Attempt</option>
+								<option value="9">Unsuccessfully Delivery Attempt</option>
 							</select>
 					   </div>
 					</div>

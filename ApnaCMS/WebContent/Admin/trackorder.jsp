@@ -22,6 +22,29 @@
     
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.4/css/jquery.dataTables.min.css">
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script type = "text/javascript">
+        
+    	function validation(){
+    		
+    		var contactexp = /^\d{10}$/;
+			var emailexp = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+			var zipexp = /^\d{6}$/;
+			var letterexp = /^[A-Za-z]+$/;
+			var trackid = /^\d{18}$/;
+    		
+			if(document.form.trackid.value == '')
+    		{
+    			document.getElementById("errorspan").innerHTML = "Enter Track Id";  
+    			return false;
+    		}
+    		else 
+    		{
+    			document.getElementById("errorspan").innerHTML = "";
+    			return true;
+    		}
+			
+    	} 
+    </script>
 </head>
 <style>
 
@@ -150,16 +173,19 @@
         </div>
         <div class = "container-fluid form-container">
         	
-	        <form class = "form-body">
+	        <form class = "form-body" name = "form">
 	            <div class="form-group">
-		        	<label for="" class="control-label text-center">Track Id</label>
+		        	<label for="" class="control-label text-center">Track Id<span style = "color:red;font-size:14px;font-weight:bolder;">*</span></label>
 		            <div class="input-group mb-3">
-						<input type="text" class="form-control" placeholder="Track Order ID" aria-label="Track Order ID" aria-describedby="basic-addon2">
+						<input type="text" class="form-control" name = "trackid" placeholder="Track Order ID" aria-label="Track Order ID" aria-describedby="basic-addon2">
 						<div class="input-group-append">
-							<button type="button" class="btn btn-primary form-control"  data-toggle="modal" data-target="#exampleModalCenter" style = "font-size: 12px;font-weight: bolder;" ><i class="bx bx-search" style = "font-weight:bolder;"></i></button>
+							<button type="submit" class="btn btn-primary form-control" onclick = "return validation()" style = "font-size: 12px;font-weight: bolder;" ><i class="bx bx-search" style = "font-weight:bolder;"></i></button>
 						</div>
 					</div>
 		         </div>
+		         <div class = "text-center mt-2">
+				   	<b><span id = "errorspan" style = "font-size:small;font-weight:bolder;color:red"></span></b>
+				</div>
 		     </form>     
            	<hr>
            	<br>

@@ -13,7 +13,7 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     
-	<!--========== BOX ICONS ==========-->
+    <!--========== BOX ICONS ==========-->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
         
     <link rel="stylesheet" href="./assets/css/style.css">
@@ -22,7 +22,115 @@
     
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.4/css/jquery.dataTables.min.css">
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script type = "text/javascript">
+    	function validation(){
+    	
+    		var contactexp = /^\d{10}$/;
+			var emailexp = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+			var zipexp = /^\d{6}$/;
+			var letterexp = /^[A-Za-z]+$/;
+            var numberexp = /^\d+$/;
+			
+            if(document.form.sender_name.value=='')
+    		{
+    			document.getElementById("errorspan").innerHTML = "Enter Sender Name";  
+    			return false;
+    		}
+			else if(!document.form.sender_name.value.match(letterexp))
+    		{
+    			document.getElementById("errorspan").innerHTML = "Enter Correct Sender Name";  
+    			return false;
+    		}
+			else if(document.form.sender_address.value=='')
+    		{
+    			document.getElementById("errorspan").innerHTML = "Enter Sender Address";  
+    			return false;
+    		}
+    		else if(document.form.sender_contact.value=='')
+    		{
+    			document.getElementById("errorspan").innerHTML = "Enter Sender Contact";  
+    			return false;
+    		} 
+    		else if(!document.form.sender_contact.value.match(contactexp))
+    		{
+    			document.getElementById("errorspan").innerHTML = "Enter Correct Sender Contact";  
+    			return false;
+    		}
+    		else if(document.form.recipient_name.value=='')
+    		{
+        		document.getElementById("errorspan").innerHTML = "Enter Recipient Name";  
+        		return false;
+        	}
+    		else if(!document.form.recipient_name.value.match(letterexp))
+        	{
+        		document.getElementById("errorspan").innerHTML = "Enter Correct Recipient Name";  
+        		return false;
+        	}
+        	else if(document.form.recipient_address.value=='')
+        	{
+        		document.getElementById("errorspan").innerHTML = "Enter Recipient Address";  
+        		return false;
+        	}
+        	else if(document.form.recipient_contact.value=='')
+        	{
+        		document.getElementById("errorspan").innerHTML = "Enter Recipient Contact";  
+        		return false;
+        	} 
+        	else if(!document.form.recipient_contact.value.match(contactexp))
+        	{
+        		document.getElementById("errorspan").innerHTML = "Enter Correct Recipient Contact";  
+        		return false;
+        	}
+        	else if(document.form.type.value==-1)
+        	{
+        		document.getElementById("errorspan").innerHTML = "Select Type";  
+        		return false;
+        	}
+        	else if(document.form.weight.value=='')
+        	{
+        		document.getElementById("errorspan").innerHTML = "Enter Weight";  
+        		return false;
+        	} 
+        	else if(!document.form.weight.value.match(numberexp))
+        	{
+        		document.getElementById("errorspan").innerHTML = "Enter Number Only";  
+        		return false;
+        	}
+        	else if(document.form.price.value=='')
+        	{
+        		document.getElementById("errorspan").innerHTML = "Enter Price";  
+        		return false;
+        	} 
+        	else if(!document.form.price.value.match(numberexp))
+        	{
+        		document.getElementById("errorspan").innerHTML = "Enter Number Only";  
+        		return false;
+        	}
+        	else if(document.form.total.value=='')
+        	{
+        		document.getElementById("errorspan").innerHTML = "Enter Total";  
+        		return false;
+        	} 
+        	else if(!document.form.total.value.match(numberexp))
+        	{
+        		document.getElementById("errorspan").innerHTML = "Enter Number Only";  
+        		return false;
+        	} 
+			else
+    		{
+    			document.getElementById("errorspan").innerHTML = "";
+    			return true;
+    		}
+			
+    	} 
+    </script>
 </head>
+<style>
+#pickup-branch-div{
+	display: none;
+}
+
+</style>
 <body>
 <%
 	if(session.getAttribute("emailid")==null)
@@ -147,36 +255,36 @@
         </div>
         <div class = "container-fluid form-container">
         	
-        <form class = "form-body">
+        <form class = "form-body" name = "form">
             <div class="row">
 	          <div class="col-md-6">
 	              <b>Sender Information</b>
 	              <div class="form-group">
-	                <label for="" class="control-label">Name</label>
-	                <input type="text" name="sender_name" id="" class="form-control form-control-sm" value="" required="">
+	                <label for="" class="control-label">Name<span style = "color:red;font-size:14px;font-weight:bolder;">*</span></label>
+	                <input type="text" name="sender_name"  class="form-control form-control-sm" >
 	              </div>
 	              <div class="form-group">
-	                <label for="" class="control-label">Address</label>
-	                <input type="text" name="sender_address" id="" class="form-control form-control-sm" value="" required="">
+	                <label for="" class="control-label">Address<span style = "color:red;font-size:14px;font-weight:bolder;">*</span></label>
+	                <input type="text" name="sender_address"  class="form-control form-control-sm" >
 	              </div>
 	              <div class="form-group">
-	                <label for="" class="control-label">Contact #</label>
-	                <input type="text" name="sender_contact" id="" class="form-control form-control-sm" value="" required="">
+	                <label for="" class="control-label">Contact #<span style = "color:red;font-size:14px;font-weight:bolder;">*</span></label>
+	                <input type="text" name="sender_contact"  class="form-control form-control-sm" maxlength="10" >
 	              </div>
 	          </div>
 	          <div class="col-md-6">
 	              <b>Recipient Information</b>
 	              <div class="form-group">
-	                <label for="" class="control-label">Name</label>
-	                <input type="text" name="recipient_name" id="" class="form-control form-control-sm" value="" required="">
+	                <label for="" class="control-label">Name<span style = "color:red;font-size:14px;font-weight:bolder;">*</span></label>
+	                <input type="text" name="recipient_name"  class="form-control form-control-sm" >
 	              </div>
 	              <div class="form-group">
-	                <label for="" class="control-label">Address</label>
-	                <input type="text" name="recipient_address" id="" class="form-control form-control-sm" value="" required="">
+	                <label for="" class="control-label">Address<span style = "color:red;font-size:14px;font-weight:bolder;">*</span></label>
+	                <input type="text" name="recipient_address"  class="form-control form-control-sm" >
 	              </div>
 	              <div class="form-group">
-	                <label for="" class="control-label">Contact #</label>
-	                <input type="text" name="recipient_contact" id="" class="form-control form-control-sm" value="" required="">
+	                <label for="" class="control-label">Contact #<span style = "color:red;font-size:14px;font-weight:bolder;">*</span></label>
+	                <input type="text" name="recipient_contact"  class="form-control form-control-sm" maxlength="10">
 	              </div>
 	          </div>
 	        </div>
@@ -184,17 +292,17 @@
            	<div class="row">
 	          <div class="col-md-6">
 	            <div class="form-group">
-	              <label for="dtype">Type</label>
-	              	<select name="category" class="form-control" style = "font-size: 12px;">
-                    	<option selected>Choose Type...</option>
-	                    <option>Deliver</option>
-	                    <option>PickUp</option>
+	              <label for="type">Type<span style = "color:red;font-size:14px;font-weight:bolder;">*</span></label>
+	              	<select name="type" id = "type" class="form-control" style = "font-size: 12px;" onchange = "showDiv(this)">
+                    	<option value = "-1" selected>Choose Type...</option>
+	                    <option value = "Deliver">Deliver</option>
+	                    <option value = "PickUp">PickUp</option>
                     </select>
 	            </div>
 	          </div>
-	          <div class="col-md-6" id="">
-	             <div class="form-group" id="fbi-field">
-	                <label for="" class="control-label">Branch Processed</label>
+	           <div class="col-md-6">
+	             <div class="form-group">
+	                <label for="" class="control-label">Branch Processed<span style = "color:red;font-size:14px;font-weight:bolder;">*</span></label>
 	              	<select name="category" class="form-control" style = "font-size: 12px;">
 	                   <option selected>Choose Branch Processed...</option>
 	                   <option>1</option>
@@ -203,8 +311,8 @@
                     </select>
 	            </div>
 	              
-	            <div class="form-group" id="tbi-field">
-	              	<label for="" class="control-label">Pickup Branch</label>
+	            <div class="form-group" id="hidden_div" style = "display:none;">
+	              	<label for="" class="control-label" >Pickup Branch<span style = "color:red;font-size:14px;font-weight:bolder;">*</span></label>
 	              	<select name="category" class="form-control" style = "font-size: 12px;">
 	                    <option selected>Choose Pickup Branch...</option>
 	                    <option>1</option>
@@ -219,60 +327,43 @@
             <div class="form-row">
                 <div class="form-group col-md-2">
                     <label for="productprice">Height</label>
-                    <input type="text" class="form-control" name="firstname" placeholder="Height">
+                    <input type="text" class="form-control" name="height" placeholder="Height">
                 </div>
                 <div class="form-group col-md-2">
-                    <label for="productprice">Weight</label>
-                    <input type="text" class="form-control" name="lastname" placeholder="Weight">
+                    <label for="productprice">Weight<span style = "color:red;font-size:14px;font-weight:bolder;">*</span></label>
+                    <input type="text" class="form-control" name="weight" placeholder="Weight">
                 </div>
             	<div class="form-group col-md-2">
                     <label for="productprice">Length</label>
-                    <input type="text" class="form-control" name="firstname" placeholder="Length">
+                    <input type="text" class="form-control" name="length" placeholder="Length">
                 </div>
                 <div class="form-group col-md-2">
                     <label for="productprice">Width</label>
-                    <input type="text" class="form-control" name="lastname" placeholder="Width">
+                    <input type="text" class="form-control" name="width" placeholder="Width">
                 </div>
             	<div class="form-group col-md-2">
-                    <label for="productprice">Price</label>
-                    <input type="text" class="form-control" name="firstname" placeholder="Price">
+                    <label for="productprice">Price<span style = "color:red;font-size:14px;font-weight:bolder;">*</span></label>
+                    <input type="text" class="form-control" name="price" placeholder="Price">
                 </div>
                 <div class="form-group col-md-2">
-                    <label for="productprice">Total</label>
-                    <input type="text" class="form-control" name="lastname" placeholder="Total">
+                    <label for="productprice">Total<span style = "color:red;font-size:14px;font-weight:bolder;">*</span></label>
+                    <input type="text" class="form-control" name="total" placeholder="Total">
                 </div>
             </div>
             <hr>
             
             <div class = "text-center">
                 <!-- Button trigger modal -->
-                <button type="button" class="btn btn-primary form-control"  data-toggle="modal" data-target="#exampleModalCenter" style = "font-size: 12px;font-weight: bolder;" >Submit</button>
-            </div>
+                <button type="submit" class="btn btn-primary form-control" style = "font-size: 12px;font-weight: bolder;" onclick = "return validation()">Submit</button>
+            </div> 
             
             <!-- Modal -->
-            <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-                <div class="modal-dialog modal-dialog-centered" role="document">
-                <div class="modal-content">
-                    <div class="modal-header text-center">
-                    <h5 class="modal-title" id="exampleModalLongTitle">Confirmation</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                    </div>
-                    <div class="modal-body text-center">
-                   		You Want To Save Data
-                    </div>
-                    <div class="modal-footer">
-                    <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button> -->
-                        <button type="button" class="btn btn-danger" data-dismiss="modal" aria-label="Close">No</button>
-                        <button type="button" class="btn btn-primary" >Yes</button>
-                    </div>
-                </div>
-                </div>
-            </div>
+            
             
         </form>
-        
+        <div class = "text-center p-2">
+	        	<span id = "errorspan" style = "font-size:small;font-weight:bolder;color:red"></span>
+	        </div>
         
         
         </div>
@@ -293,5 +384,21 @@
     
     <script src="https://cdn.datatables.net/1.10.4/js/jquery.dataTables.min.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    
+    <script type="text/javascript">
+	function showDiv(select){
+		
+		if(select.value=='-1'){
+			document.getElementById('hidden_div').style.display = "none";	
+		}
+		else if(select.value=='Deliver'){
+	    	document.getElementById('hidden_div').style.display = "none";
+	   	}
+		else if(select.value=='PickUp'){
+	    	document.getElementById('hidden_div').style.display = "block";
+	   	} 
+		
+	} 
+	</script>
 </body>
 </html>

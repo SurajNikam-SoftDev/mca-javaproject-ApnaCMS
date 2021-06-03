@@ -28,21 +28,20 @@
     
     <script type = "text/javascript">
     	function validation(){
-    	/*	var phoneNumber = document.getElementById('contactno').value;
-    		var phoneRGEX = /^[(]{0,1}[0-9]{3}[)]{0,1}[-\s\.]{0,1}[0-9]{3}[-\s\.]{0,1}[0-9]{4}$/;
     		
-    		var postalCode = document.getElementById('zipcode').value;
-    		var postalRGEX = /^[A-Z]{1,2}[0-9]{1,2} ?[0-9][A-Z]{6}$/i;
-    	*/
-    	
-    		var zippattern="/^\d{6}$/";	//	pincode
-            var mobilepattern='/^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/';	//  mobile number
-            //var email=/^([a-z A-Z 0-9 _\.\-])+\@(([a-z A-Z 0-9\-])+\.)+([a-z A-z 0-9]{3,3})+$/;	//	email
-            
-            
+    		var contactexp = /^\d{10}$/;
+			var emailexp = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+			var zipexp = /^\d{6}$/;
+			var letterexp = /^[A-Za-z]+$/;
+    		
             if(document.form.firstname.value=='')
     		{
     			document.getElementById("errorspan").innerHTML = "Enter First Name";  
+    			return false;
+    		}
+            else if(!document.form.firstname.value.match(letterexp))
+    		{
+    			document.getElementById("errorspan").innerHTML = "Enter Characters Only In First Name";  
     			return false;
     		}
     		else if(document.form.middlename.value=='')
@@ -50,11 +49,21 @@
     			document.getElementById("errorspan").innerHTML = "Enter Middle Name";  
     			return false;
     		}
+    		else if(!document.form.middlename.value.match(letterexp))
+    		{
+    			document.getElementById("errorspan").innerHTML = "Enter Characters Only In Middle Name";  
+    			return false;
+    		}
     		else if(document.form.lastname.value=='')
     		{
     			document.getElementById("errorspan").innerHTML = "Enter Last Name";  
     			return false;
     		} 
+    		else if(!document.form.lastname.value.match(letterexp))
+    		{
+    			document.getElementById("errorspan").innerHTML = "Enter Characters Only In Last Name";  
+    			return false;
+    		}
     		else if(document.form.branchname.value== '-1' )
     		{
     			document.getElementById("errorspan").innerHTML = "Select Branch";  
@@ -62,6 +71,10 @@
     		}
     		else if(document.form.email.value==''){
     			document.getElementById("errorspan").innerHTML = "Enter Email Id";  
+    			return false;
+    		}
+    		else if(!document.form.email.value.match(emailexp)){
+    			document.getElementById("errorspan").innerHTML = "Enter Correct Email Id";  
     			return false;
     		}
     		else if(document.form.password.value==''){

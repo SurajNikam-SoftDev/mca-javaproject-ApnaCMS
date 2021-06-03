@@ -27,19 +27,13 @@
     
     <script type = "text/javascript">
     	function validation(){
-    	/*	var phoneNumber = document.getElementById('contactno').value;
-    		var phoneRGEX = /^[(]{0,1}[0-9]{3}[)]{0,1}[-\s\.]{0,1}[0-9]{3}[-\s\.]{0,1}[0-9]{4}$/;
-    		
-    		var postalCode = document.getElementById('zipcode').value;
-    		var postalRGEX = /^[A-Z]{1,2}[0-9]{1,2} ?[0-9][A-Z]{6}$/i;
-    	*/
     	
-    		var zippattern="/^\d{6}$/";	//	pincode
-            var mobilepattern='/^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/';	//  mobile number
-            //var email=/^([a-z A-Z 0-9 _\.\-])+\@(([a-z A-Z 0-9\-])+\.)+([a-z A-z 0-9]{3,3})+$/;	//	email
+    		var contactexp = /^\d{10}$/;
+			var emailexp = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+			var zipexp = /^\d{6}$/;
+			var letterexp = /^[A-Za-z]+$/;
             
-            
-            if(document.form.streetbuilding.value==0)
+            if(document.form.streetbuilding.value=='')
     		{
     			document.getElementById("errorspan").innerHTML = "Enter Street/Building";  
     			return false;
@@ -59,8 +53,17 @@
     			document.getElementById("errorspan").innerHTML = "Enter ZipCode";  
     			return false;
     		}
+    		else if(!document.form.zipcode.value.match(zipexp))
+    		{
+    			document.getElementById("errorspan").innerHTML = "Enter Correct ZipCode";  
+    			return false;
+    		}
     		else if(document.form.contactno.value==''){
     			document.getElementById("errorspan").innerHTML = "Enter Contact Number";  
+    			return false;
+    		}
+    		else if(!document.form.contactno.value.match(contactexp)){
+    			document.getElementById("errorspan").innerHTML = "Enter Correct Contact Number";  
     			return false;
     		}
     		else
@@ -69,19 +72,6 @@
     			return true;
     		}
     		 
-    		
-    		/*
-    		else if(phoneRGEX.test(phoneNumber)==false){
-    			document.getElementById("errorspan").innerHTML = "Enter Correct ZipCode";  
-    			return false;
-    		}
-    		else if(postalRGEX.test(postalCode)==false){
-    			document.getElementById("errorspan").innerHTML = "Enter Correct Contact Number";  
-    			return false;
-    		}
-    		*/
-//    		document.getElementById("errorspan").innerHTML = "error";  
-//     		document.​getElementById("errorspan").element.style.color = 'red';
 
     	} 
     </script>
@@ -239,11 +229,11 @@
                 </div>
                 <div class="form-group col-md-4">
                     <label for="productprice">ZipCode<span style = "color:red;font-size:14px;font-weight:bolder;">*</span></label>
-                    <input type="text" class="form-control"  id = "zipcode" name="zipcode" placeholder="ZipCode">
+                    <input type="text" class="form-control"  id = "zipcode" name="zipcode" placeholder="ZipCode" maxlength="6">
                 </div>
                 <div class="form-group col-md-4">
                     <label for="productprice">Contact No<span style = "color:red;font-size:14px;font-weight:bolder;">*</span></label>
-                    <input type="text" class="form-control" id = "contactno" name="contactno" placeholder="Contact No">
+                    <input type="text" class="form-control" id = "contactno" name="contactno" placeholder="Contact No" maxlength="10">
                 </div>
             </div>
             

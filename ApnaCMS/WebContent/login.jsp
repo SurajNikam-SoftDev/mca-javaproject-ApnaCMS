@@ -18,10 +18,43 @@
     
     <!-- jquery-ui CSS -->
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script type = "text/javascript">
+        
+    	function validation(){
+    		
+    		var contactexp = /^\d{10}$/;
+			var emailexp = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+			var zipexp = /^\d{6}$/;
+			var letterexp = /^[A-Za-z]+$/;
+            
+			
+			if(document.form.email_id.value == '')
+    		{
+    			document.getElementById("errorspan").innerHTML = "Enter Email Id";  
+    			return false;
+    		}
+    		else if(!document.form.email_id.value.match(emailexp))
+    		{
+    			document.getElementById("errorspan").innerHTML = "Enter Correct Email Id";  
+    			return false;
+    		}
+    		else if(document.form.password.value == '')
+    		{
+    			document.getElementById("errorspan").innerHTML = "Enter Password";  
+    			return false;
+    		}
+    		else 
+    		{
+    			document.getElementById("errorspan").innerHTML = "";
+    			return true;
+    		}
+			
+    	} 
+    </script>
 </head>
 <body>	
 	<div class="container">
-			<div class = "login-container">
+		<div class = "login-container">
 			<div class = "login-header text-center">
 				<h6>ApnaCMS</h6> 
 			</div>
@@ -30,15 +63,15 @@
 					<b class = "p-3">Log In</b>
 				</div>
 				<hr> 
-				<form action="./LogIn" method = "POST"> 
+				<form action="./LogIn" name = "form" method = "POST"> 
 					<div class="form-group">
-						<label for="email_id">Email address</label> <input type="email"
+						<label for="email_id">Email address<span style = "color:red;font-size:14px;font-weight:bolder;">*</span></label> <input type="email"
 								class="form-control" name="email_id"
 								style="font-size: 10px; color: black"
 								placeholder="Enter email address">
 					</div>
 					<div class="form-group">
-						<label for="password">Password</label> <input type="password"
+						<label for="password">Password<span style = "color:red;font-size:14px;font-weight:bolder;">*</span></label> <input type="password"
 							class="form-control" name="password"
 							style="font-size: 10px; color: black"
 							placeholder="Enters password">
@@ -49,16 +82,15 @@
 							style="font-weight:bolder;color: black; text-decoration: none;">Forgot Password?</a>
 					</div>
 					<div class="text-center mt-2">
-						<button type="submit" class="btn formsubmitbtn form-control">Submit</button>
-					</div>
-					<hr>
+						<button type="submit" class="btn formsubmitbtn form-control" onclick = "return validation()">Submit</button>
+					</div> 
 				</form>
-
-
+				<div class = "text-center mt-3">
+		        	<b><span id = "errorspan" style = "font-size:x-small;font-weight:bolder;color:red"></span></b>
+		        </div>
 			</div>
-			
 		</div>
-		</div>
+	</div>
 
 	
     

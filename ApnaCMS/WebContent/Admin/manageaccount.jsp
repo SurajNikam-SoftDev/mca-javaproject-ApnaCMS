@@ -22,6 +22,61 @@
     
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.4/css/jquery.dataTables.min.css">
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script type = "text/javascript">
+    function validation(){
+    		
+	    	var contactexp = /^\d{10}$/;
+			var emailexp = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+			var zipexp = /^\d{6}$/;
+			var letterexp = /^[A-Za-z]+$/;
+            
+            if(document.form.firstname.value=='')
+    		{
+    			document.getElementById("errorspan").innerHTML = "Enter First Name";  
+    			return false;
+    		}
+            else if(!document.form.firstname.value.match(letterexp))
+    		{
+    			document.getElementById("errorspan").innerHTML = "Enter Letters Only";  
+    			return false;
+    		}
+    		else if(document.form.middlename.value=='')
+    		{
+    			document.getElementById("errorspan").innerHTML = "Enter Middle Name";  
+    			return false;
+    		}
+    		else if(!document.form.middlename.value.match(letterexp))
+     		{
+     			document.getElementById("errorspan").innerHTML = "Enter Letters Only";  
+     			return false;
+     		}
+    		else if(document.form.lastname.value=='')
+    		{
+    			document.getElementById("errorspan").innerHTML = "Enter Last Name";  
+    			return false;
+    		} 
+    		else if(!document.form.lastname.value.match(letterexp))
+     		{
+     			document.getElementById("errorspan").innerHTML = "Enter Letters Only";  
+     			return false;
+     		}
+    		else if(document.form.email.value==''){
+    			document.getElementById("errorspan").innerHTML = "Enter Email Id";  
+    			return false;
+    		}
+    		else if(!document.form.email.value.match(emailexp))
+     		{
+     			document.getElementById("errorspan").innerHTML = "Enter Correct Email Id";  
+     			return false;
+     		}
+    		else
+    		{
+    			document.getElementById("errorspan").innerHTML = "";
+    			return true;
+    		}
+    		 
+    	} 
+    </script>
 </head>
 <style>
 input[type=email], input[type=password]{
@@ -154,59 +209,43 @@ input[type=email], input[type=password]{
         <div class = "container-fluid form-container">
         <div class = "row justify-content-center">
         	<div class="col-6">
-        		<form class = "form-body ">
+        		<form class = "form-body" name = "form">
 		            <div class="form-row justify-content-center">
 		            	<div class="form-group col-md-4">
-		                    <label for="firstname">First Name</label>
+		                    <label for="firstname">First Name<span style = "color:red;font-size:14px;font-weight:bolder;">*</span></label>
 		                    <input type="text" class="form-control" name="firstname" placeholder="First Name">
 		                </div>
 		                <div class="form-group col-md-4">
-		                    <label for="middlename">Middle Name</label>
+		                    <label for="middlename">Middle Name<span style = "color:red;font-size:14px;font-weight:bolder;">*</span></label>
 		                    <input type="text" class="form-control" name="middlename" placeholder="Middle Name">
 		                </div>
 		                <div class="form-group col-md-4">
-		                    <label for="lastname">Last Name</label>
+		                    <label for="lastname">Last Name<span style = "color:red;font-size:14px;font-weight:bolder;">*</span></label>
 		                    <input type="text" class="form-control" name="lastname" placeholder="Last Name">
 		                </div>
 		            </div>
 		            <div class="form-group">
-		                <label for="inputAddress">Email</label>
+		                <label for="inputAddress">Email<span style = "color:red;font-size:14px;font-weight:bolder;">*</span></label>
 		                <input type="email" class="form-control" name="email" placeholder="Email">
 		            </div>
 		           	<div class="form-group">
 		                <label for="inputAddress">Password</label>
 		                <input type="password" class="form-control" name="password" placeholder="Password">
+		                <div class = "text-center">
+		                	<small style = "font-size:x-small;color:grey;font-style: oblique;">Leave this blank if you dont want to change the password.</small>
+		                </div>
 		            </div>
 		            
 					
 		            <div class = "text-center">
 		                <!-- Button trigger modal -->
-		                <button type="button" class="btn btn-primary form-control"  data-toggle="modal" data-target="#exampleModalCenter" style = "font-size: 12px;font-weight: bolder;" >Submit</button>
-		            </div>
-		            
-		            <!-- Modal -->
-		            <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-		                <div class="modal-dialog modal-dialog-centered" role="document">
-		                <div class="modal-content">
-		                    <div class="modal-header text-center">
-		                    <h5 class="modal-title" id="exampleModalLongTitle">Confirmation</h5>
-		                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-		                        <span aria-hidden="true">&times;</span>
-		                    </button>
-		                    </div>
-		                    <div class="modal-body text-center">
-		                   		You Want To Save Data
-		                    </div>
-		                    <div class="modal-footer">
-		                    <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button> -->
-		                        <button type="button" class="btn btn-danger" data-dismiss="modal" aria-label="Close">No</button>
-		                        <button type="button" class="btn btn-primary" >Yes</button>
-		                    </div>
-		                </div>
-		                </div>
+		                <button type="submit" class="btn btn-primary form-control" onclick = "return validation()" style = "font-size: 12px;font-weight: bolder;" >Submit</button>
 		            </div>
 		            
 		        </form>
+		        <div class = "text-center mt-2">
+		        	<b><span id = "errorspan" style = "font-size:small;font-weight:bolder;color:red"></span></b>
+		        </div>
         	</div>
         </div>	
 	        
