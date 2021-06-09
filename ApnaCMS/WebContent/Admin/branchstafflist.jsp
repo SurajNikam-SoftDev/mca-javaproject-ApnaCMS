@@ -179,7 +179,6 @@ for (BranchStaffBean branchstaff: list) {
                     <td><%= branchstaff.getEmail() %></td>
                     <td><%= BranchStaffDao.getBranchById(branchstaff.getBranch_id()) %></td>
                     <td class = "text-center">
-                    	
                     	<a href="javascript:void(0)" onclick="location.href='EditBranchStaff?key=<%= branchstaff.getCuid() %>'" class = "" style = "text-decoration: none;" data-toggle="tooltip" data-placement="bottom" title="Edit"><i class='bx bx-edit nav__icon ' ></i></a>
                     	<a href="javascript:void(0)" onclick="location.href='DeleteBranchStaff?key=<%= branchstaff.getCuid() %>'" class = "" style = "text-decoration: none;" data-toggle="tooltip" data-placement="bottom" title="Delete"><i class='bx bx-coffee-togo nav__icon' style = "color:red;"></i></a>
                     </td>
