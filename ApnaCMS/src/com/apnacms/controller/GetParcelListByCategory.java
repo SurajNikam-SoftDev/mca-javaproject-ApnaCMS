@@ -1,4 +1,4 @@
-package com.apnacms.staff.controller;
+package com.apnacms.controller;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
@@ -8,16 +8,16 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementation class SP_AddNewParcel
+ * Servlet implementation class GetParcelListByCategory
  */
-@WebServlet("/SP_AddNewParcel")
-public class SP_AddNewParcel extends HttpServlet {
+@WebServlet("/GetParcelListByCategory")
+public class GetParcelListByCategory extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public SP_AddNewParcel() {
+    public GetParcelListByCategory() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -27,7 +27,7 @@ public class SP_AddNewParcel extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		request.getRequestDispatcher("Staff/addnewparcel.jsp").forward(request, response);  
+		request.getRequestDispatcher("ASOperation/getparcellistbycategory.jsp").forward(request, response); 
 	}
 
 	/**

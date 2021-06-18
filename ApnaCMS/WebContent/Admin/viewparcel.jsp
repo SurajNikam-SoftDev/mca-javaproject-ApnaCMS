@@ -1,3 +1,6 @@
+<%@page import="com.apnacms.dao.BranchDao"%>
+<%@page import="com.apnacms.dao.ParcelDao"%>
+<%@page import="com.apnacms.bean.ParcelBean"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8" isErrorPage="true"%>
 <!DOCTYPE html>
@@ -29,6 +32,15 @@
 	{
 		response.sendRedirect("./LogIn");
 	}	
+	
+	String key = request.getParameter("key") != null || request.getParameter("key") != ""
+	? request.getParameter("key")
+	: "undefined";
+	key = key.isEmpty() ? "undefined" : key; 
+	
+//	System.out.println(key);
+	
+	ParcelBean pb = ParcelDao.getParcelById(key);
 %>
 	<!--========== HEADER ==========-->
         <header class="header">
@@ -96,7 +108,6 @@
                                 </a>
 								<div class="nav__dropdown-collapse">
                                     <div class="nav__dropdown-content">
-                                        <a href="AddNewParcel" class="nav__dropdown-item">Add New</a>
                                         <a href="ParcelList" class="nav__dropdown-item">List All</a>
                                         <a href="ItemAcceptByCourier" class="nav__dropdown-item">Item Accepted by courier</a>
                                         <a href="Collected" class="nav__dropdown-item">Collected</a>
@@ -146,9 +157,10 @@
         </div>
 
 		<div class="container-fluid parcel-container">	
-		<form>
+		<form action = "./ViewParcel" method = "POST">
+			<input type = "hidden" name = "parcel_id" value = "<%= key %>">
 			<div class="parcel-sub-container">
-				<b class = "parcel-header">Track ID: 505604168988</b>
+				<b class = "parcel-header">Track ID: <%= pb.getReferenceno() %></b>
 			</div>
 			<br>
         	<div class = "row">
@@ -157,15 +169,15 @@
         				<b>Sender Information</b>
 		              	<div class="form-group">
 		                	<label for="" class="control-label">Name</label>
-		                	<input type="text" name="sender_name" id="" class="form-control form-control-sm" value="John Smith" required="">
+		                	<input type="text" name="sender_name" id="" class="form-control form-control-sm" value="<%= pb.getSendername() %>" readonly>
 		              	</div>
 		              	<div class="form-group">
 		                	<label for="" class="control-label">Address</label>
-		                	<input type="text" name="sender_address" id="" class="form-control form-control-sm" value="Sample" required="">
+		                	<input type="text" name="sender_address" id="" class="form-control form-control-sm" value="<%= pb.getSenderaddress()%>" readonly>
 		              	</div>
 		              	<div class="form-group">
 		                	<label for="" class="control-label">Contact #</label>
-		                	<input type="text" name="sender_contact" id="" class="form-control form-control-sm" value="+123456" required="">
+		                	<input type="text" name="sender_contact" id="" class="form-control form-control-sm" value="<%= pb.getSendercontact()%>" readonly>
 		              	</div>	
         			</div>
         		</div>
@@ -174,15 +186,15 @@
         				<b>Recipient Information</b>
 		              	<div class="form-group">
 		                	<label for="" class="control-label">Name</label>
-		                	<input type="text" name="recipient_name" id="" class="form-control form-control-sm" value="Sample" required="">
+		                	<input type="text" name="recipient_name" id="" class="form-control form-control-sm" value="<%= pb.getReceipantname() %>" readonly>
 		              	</div>
 		              	<div class="form-group">
 		                	<label for="" class="control-label">Address</label>
-		                	<input type="text" name="recipient_address" id="" class="form-control form-control-sm" value="Sample" required="">
+		                	<input type="text" name="recipient_address" id="" class="form-control form-control-sm" value="<%=pb.getReceipantaddress() %>" readonly>
 		              	</div>
 		              	<div class="form-group">
 		                	<label for="" class="control-label">Contact #</label>
-		                	<input type="text" name="recipient_contact" id="" class="form-control form-control-sm" value="+12345" required="">
+		                	<input type="text" name="recipient_contact" id="" class="form-control form-control-sm" value="<%= pb.getReceipantcontact() %>" readonly>
 		              	</div>	
         			</div>
         		</div>
@@ -190,109 +202,135 @@
         	<div class="parcel-sub-container mt-4">
 				<b class = "parcel-header">Parcel Details:</b>
 				
-				<div class = "row mt-2">
-					<div class = "col-md-2">
-						<div class="form-group">
-		                	<label for="" class="control-label">Height</label>
-		                	<input type="text" name="height" id="" class="form-control form-control-sm" placeholder="Height" required="">
-		              	</div>
-					</div>
-					<div class = "col-md-2">
-						<div class="form-group">
-		                	<label for="" class="control-label">Weight<span style = "color:red;font-size:14px;font-weight:bolder;">*</span></label>
-		                	<input type="text" name="weight" id="" class="form-control form-control-sm" placeholder="Weight" required="">
-		              	</div>
-					</div>
-					<div class = "col-md-2">
-						<div class="form-group">
-		                	<label for="" class="control-label">Width</label>
-		                	<input type="text" name="width" id="" class="form-control form-control-sm" value="Width" required="">
-		              	</div>
-					</div>
-					<div class = "col-md-2">
-						<div class="form-group">
-		                	<label for="" class="control-label">Length</label>
-		                	<input type="text" name="length" id="" class="form-control form-control-sm" value="Length" required="">
-		              	</div>
-					</div>
-					<div class = "col-md-2">
-						<div class="form-group">
-		                	<label for="" class="control-label">Price<span style = "color:red;font-size:14px;font-weight:bolder;">*</span></label>
-		                	<input type="text" name="price" id="" class="form-control form-control-sm" value="Price" required="">
-		              	</div>
-					</div>
-					<div class = "col-md-2">
-						<div class="form-group">
-		                	<label for="" class="control-label">Total<span style = "color:red;font-size:14px;font-weight:bolder;">*</span></label>
-		                	<input type="text" name="total" id="" class="form-control form-control-sm" value="Type" required="">
-		              	</div>
-					</div>
-					<div class = "col-md-12">
-						<div class="form-group">
-		                	<label for="" class="control-label">Branch Accepted the Parcel:</label>
-		                	<p class = "parcel-address">Sample, Sample, Sample, 123456, Philippines</p>
-		              	</div>
-		              	<div class="form-group">
+				<div class = "form-row mt-2">
+					<div class="form-group col-md-1">
+	                    <label for="productprice">Height<small style = "font-size:9px;font-weight:bolder;color:grey">(inch)</small></label>
+	                    <input type="text" class="form-control" name="height" value = "<%= pb.getProdheight().equals("undefined")?"":pb.getProdheight() %>" placeholder="Height"  readonly>
+	                </div>
+	                <div class="form-group col-md-1">
+	                    <label for="productprice">Weight<small style = "font-size:9px;font-weight:bolder;color:grey">(kg)</small><span style = "color:red;font-size:14px;font-weight:bolder;">*</span></label>
+	                    <input type="text" class="form-control" name="weight" value = "<%= pb.getProdweight().equals("undefined")?"":pb.getProdweight() %>" placeholder="Weight" readonly>
+	                </div>
+	            	<div class="form-group col-md-1">
+	                    <label for="productprice">Length<small style = "font-size:9px;font-weight:bolder;color:grey">(inch)</small></label>
+	                    <input type="text" class="form-control" name="length" value = "<%= pb.getProdlength().equals("undefined")?"":pb.getProdlength() %>" placeholder="Length" readonly>
+	                </div>
+	                <div class="form-group col-md-1">
+	                    <label for="productprice">Width<small style = "font-size:9px;font-weight:bolder;color:grey">(inch)</small></label>
+	                    <input type="text" class="form-control" name="width" value = "<%= pb.getProdwidth().equals("undefined")?"":pb.getProdwidth() %>" placeholder="Width" readonly>
+	                </div>
+	                <div class="form-group col-md-3">
+	                    <label for="productprice">Price<small style = "font-size:9px;font-weight:bolder;color:grey">(Rs.)</small><span style = "color:red;font-size:14px;font-weight:bolder;">*</span></label>
+	                    <input type="text" class="form-control" name="price" value = "<%= Float.parseFloat(pb.getPrice()) / Float.parseFloat(pb.getQty()) %>0" placeholder="Price" readonly>
+	                </div>
+	                <div class="form-group col-md-2">
+	                    <label for="productprice">qty<span style = "color:red;font-size:14px;font-weight:bolder;">*</span></label>
+	                    <input type="text" class="form-control" name="qty" value = "<%= pb.getQty() %>" placeholder="Qty" readonly>
+	                </div>
+	                <div class="form-group col-md-3">
+	                    <label for="productprice">Total<small style = "font-size:9px;font-weight:bolder;color:grey">(Rs.)</small><span style = "color:red;font-size:14px;font-weight:bolder;">*</span></label>
+	                    <input type="text" class="form-control" name="total" value = "<%= pb.getPrice() %>" placeholder="Total" readonly>
+	                </div>
+	                <div class="form-group">
+	                	<div class="col-md-12">
+	                		<label for="" class="control-label">Branch Accepted the Parcel:</label>
+		                	<p class = "parcel-address"><%= BranchDao.getBranchAddressById(pb.getFrombranchid()) %></p>
+	                	</div>
+		                <div class="col-md-12">
 		                	<label for="" class="control-label">Nearest Branch to Recipient for Pickup:</label>
-		                	<p class = "parcel-address">Branch 1 St., Quiapo, Manila, Metro Manila, 1001, Philippines</p>
-		              	</div>
-					</div>
+			                <p class = "parcel-address"><%= BranchDao.getBranchAddressById(pb.getTobranchid()) %></p>
+		                </div>
+	                </div>
+	                
 				</div>
 			</div>
 			<div class="parcel-sub-container">
-				<b class = "parcel-header">Status: <span class = "parcel-status">Delivered</span></b>
+				<b class = "parcel-header">Status: <span class = "parcel-status"><%= pb.getOpstatus() %></span></b>
 				<div class = "row mt-2">
 					<div class = "col-md-6">
 						<div class="form-group">
 		                	<label for="" class="control-label">Update Status</label>
-		                	<select name="category" class="form-control" style = "font-size: 12px;">
-			                    <option value="-1" selected>Update Status...</option>
-			                    <option value="0">Item Accepted by Courier</option>
-								<option value="1">Collected</option>
-								<option value="2">Shipped</option>
-								<option value="3">In-Transit</option>
-								<option value="4">Arrived At Destination</option>
-								<option value="5">Out for Delivery</option>
-								<option value="6">Ready to Pickup</option>
-								<option value="7">Delivered</option>
-								<option value="8">Picked-up</option>
-								<option value="9">Unsuccessfully Delivery Attempt</option>
+		                	<select name="trackstatus" class="form-control" style = "font-size: 12px;">
+<% 
+	if(pb.getOpstatus().equals("PreApproval From CMS"))
+	{
+%>			                    
+			                    <option selected>Item Accepted by Courier</option>
+			                    <option>Unsuccessfully Delivery Attempt</option>
+<%
+	}
+	else if(pb.getOpstatus().equals("Item Accepted by Courier"))
+	{
+%>
+								<option selected>Collected</option>	
+								<option>Unsuccessfully Delivery Attempt</option>		
+<%	
+	}
+	else if(pb.getOpstatus().equals("Collected"))
+	{
+%>
+								<option selected>Shipped</option>	
+								<option>Unsuccessfully Delivery Attempt</option>		
+<%	
+	}
+	else if(pb.getOpstatus().equals("Shipped"))
+	{
+%>
+								<option selected>In-Transit</option>	
+								<option>Unsuccessfully Delivery Attempt</option>		
+<%	
+	}
+	else if(pb.getOpstatus().equals("In-Transit"))
+	{
+%>
+								<option selected>Arrived At Destination</option>	
+								<option>Unsuccessfully Delivery Attempt</option>		
+<%	
+	}
+	else if(pb.getOpstatus().equals("Arrived At Destination"))
+	{
+%>
+								<option selected>Out for Delivery</option>	
+								<option>Unsuccessfully Delivery Attempt</option>		
+<%	
+	}
+	else if(pb.getOpstatus().equals("Out for Delivery"))
+	{
+%>
+								<option selected>Ready to Pickup</option>	
+								<option>Unsuccessfully Delivery Attempt</option>		
+<%	
+	}
+	else if(pb.getOpstatus().equals("Ready to Pickup"))
+	{
+%>
+								<option selected>Delivered</option>	
+								<option>Unsuccessfully Delivery Attempt</option>		
+<%	
+	}
+	else if(pb.getOpstatus().equals("Delivered"))
+	{
+%>
+								<option selected>Picked-up</option>			
+<%	
+	}
+%>								
 							</select>
 					   </div>
 					</div>
 					<div class = "col-md-6">
 						<div class="form-group">
 		                	<label for="" class="control-label">Remark</label>
-		                	<input type="text" name="remark" id="" class="form-control form-control-sm" placeholder="Remark" required="">
+		                	<input type="text" name="remark" id="" class="form-control form-control-sm" placeholder="Remark" >
 		              	</div>
 					</div>
 				</div>
 			</div>
 			<div class = "text-center mt-3">
                 <!-- Button trigger modal -->
-                <button type="button" class="btn btn-primary form-control"  data-toggle="modal" data-target="#exampleModalCenter" style = "font-size: 12px;font-weight: bolder;" >Update Status</button>
+                <button type="submit" class="btn btn-primary form-control" style = "font-size: 12px;font-weight: bolder;" >Update Status</button>
             </div>
-            <!-- Modal -->
-            <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-                <div class="modal-dialog modal-dialog-centered" role="document">
-                <div class="modal-content">
-                    <div class="modal-header text-center">
-                    <h5 class="modal-title" id="exampleModalLongTitle">Confirmation</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                    </div>
-                    <div class="modal-body text-center">
-                   		You Want To Update Status
-                    </div>
-                    <div class="modal-footer">
-                    <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button> -->
-                        <button type="button" class="btn btn-danger" data-dismiss="modal" aria-label="Close">No</button>
-                        <button type="button" class="btn btn-primary" >Yes</button>
-                    </div>
-                </div>
-                </div>
-            </div>
+            
             </form>
         </div>   
     

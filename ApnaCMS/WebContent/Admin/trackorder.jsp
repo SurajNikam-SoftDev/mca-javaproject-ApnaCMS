@@ -37,10 +37,16 @@
     			document.getElementById("errorspan").innerHTML = "Enter Track Id";  
     			return false;
     		}
+			else if(!document.form.trackid.value.match(/\d+/g))
+    		{
+    			document.getElementById("errorspan").innerHTML = "Enter Numbers In Track Id";  
+    			return false;
+    		}
     		else 
     		{
     			document.getElementById("errorspan").innerHTML = "";
-    			return true;
+    			loadXMLDoc();
+    			return false;
     		}
 			
     	} 
@@ -122,7 +128,6 @@
                                 </a>
 								<div class="nav__dropdown-collapse">
                                     <div class="nav__dropdown-content">
-                                        <a href="AddNewParcel" class="nav__dropdown-item">Add New</a>
                                         <a href="ParcelList" class="nav__dropdown-item">List All</a>
                                         <a href="ItemAcceptByCourier" class="nav__dropdown-item">Item Accepted by courier</a>
                                         <a href="Collected" class="nav__dropdown-item">Collected</a>
@@ -177,7 +182,7 @@
 	            <div class="form-group">
 		        	<label for="" class="control-label text-center">Track Id<span style = "color:red;font-size:14px;font-weight:bolder;">*</span></label>
 		            <div class="input-group mb-3">
-						<input type="text" class="form-control" name = "trackid" placeholder="Track Order ID" aria-label="Track Order ID" aria-describedby="basic-addon2">
+						<input type="text" class="form-control" name = "trackid" id = "trackid" placeholder="Track Order ID" aria-label="Track Order ID" aria-describedby="basic-addon2">
 						<div class="input-group-append">
 							<button type="submit" class="btn btn-primary form-control" onclick = "return validation()" style = "font-size: 12px;font-weight: bolder;" ><i class="bx bx-search" style = "font-weight:bolder;"></i></button>
 						</div>
@@ -189,80 +194,9 @@
 		     </form>     
            	<hr>
            	<br>
-           	<div class = "trackorder-container">
-           		<div class="row justify-content-center">
-				    <div class="col-10">
-				    	<p class="paragraph">
-		            			<i class="bx bx-search trackorder-icon"></i>
-		            			<b class = "trackorder-text">Item accepted by Courier</b><small>Nov 27, 2020 02:06 PM</small> 
-		            	</p>
-		            	<div class = "vertical text-center">
-		            		<span class = "vertical-line"></span>
-		            	</div>
-		            	<p class="paragraph">
-		            			<i class="bx bx-search trackorder-icon"></i>
-		            			<b class = "trackorder-text">Collected</b><small>Nov 27, 2020 02:06 PM</small> 
-		            	</p>
-		            	<div class = "vertical text-center">
-		            		<span class = "vertical-line"></span>
-		            	</div>
-		            	<p class="paragraph">
-		            			<i class="bx bx-search trackorder-icon"></i>
-		            			<b class = "trackorder-text">Shipped</b><small>Nov 27, 2020 02:06 PM</small> 
-		            	</p>
-		            	<div class = "vertical text-center">
-		            		<span class = "vertical-line"></span>
-		            	</div>
-		            	<p class="paragraph">
-		            			<i class="bx bx-search trackorder-icon"></i>
-		            			<b class = "trackorder-text">In-Transit</b><small>Nov 27, 2020 02:06 PM</small> 
-		            	</p>
-		            	<div class = "vertical text-center">
-		            		<span class = "vertical-line" style = "height:100px;"></span>
-		            	</div>
-		            	<p class="paragraph">
-		            			<i class="bx bx-search trackorder-icon"></i>
-		            			<b class = "trackorder-text">Arrived At Destination</b><small>Nov 27, 2020 02:06 PM</small> 
-		            	</p>
-		            	<div class = "vertical text-center">
-		            		<span class = "vertical-line"></span>
-		            	</div>
-		            	<p class="paragraph">
-		            			<i class="bx bx-search trackorder-icon"></i>
-		            			<b class = "trackorder-text">Out For Delivery</b><small>Nov 27, 2020 02:06 PM</small> 
-		            	</p>
-		            	<div class = "vertical text-center">
-		            		<span class = "vertical-line"></span>
-		            	</div>
-		            	<p class="paragraph">
-		            			<i class="bx bx-search trackorder-icon"></i>
-		            			<b class = "trackorder-text">Ready To PickUp</b><small>Nov 27, 2020 02:06 PM</small> 
-		            	</p>
-		            	<div class = "vertical text-center">
-		            		<span class = "vertical-line"></span>
-		            	</div>
-		            	<p class="paragraph">
-		            			<i class="bx bx-search trackorder-icon"></i>
-		            			<b class = "trackorder-text">Delivered</b><small>Nov 27, 2020 02:06 PM</small> 
-		            	</p>
-		            	<div class = "vertical text-center">
-		            		<span class = "vertical-line"></span>
-		            	</div>
-		            	<p class="paragraph">
-		            			<i class="bx bx-search trackorder-icon"></i>
-		            			<b class = "trackorder-text">PickUp</b><small>Nov 27, 2020 02:06 PM</small> 
-		            	</p>
-		            	<div class = "vertical text-center">
-		            		<span class = "vertical-line-process"></span>
-		            	</div>
-		            	<p class="paragraph">
-		            			<i class="bx bx-search trackorder-icon"></i>
-		            			<b class = "trackorder-text">Unsuccessfully Delivery Arrived</b><small>Nov 27, 2020 02:06 PM</small> 
-		            	</p>
-				    </div>
-				</div>
+           	<div class = "trackorder-container" id="ajaxResponse" >
            	</div>
-             
+              
         
         
         </div>
@@ -283,5 +217,40 @@
     
     <script src="https://cdn.datatables.net/1.10.4/js/jquery.dataTables.min.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    
+    <script>
+    
+    function loadXMLDoc() {
+    	
+        var xmlhttp = new XMLHttpRequest();
+        xmlhttp.onreadystatechange = function() {
+            if (xmlhttp.readyState == XMLHttpRequest.DONE) {
+
+               if (xmlhttp.status == 200) {
+                   document.getElementById("ajaxResponse").innerHTML = xmlhttp.responseText;
+                   
+                   var table = $('.myDataTable').DataTable({
+                       scrollY: 100,
+                       scrollX: true,
+                       scrollCollapse: true,  
+                       
+                   });
+               }
+               
+               else if (xmlhttp.status == 400) {
+                   alert('There was an error 400');
+               }
+               else {
+                   alert('something else other than 200 was returned');
+               }
+            }	
+        };
+		
+        var url = "GetTrackOrder?key="+document.getElementById('trackid').value;
+        //alert(url);
+        xmlhttp.open("GET", url , false);
+        xmlhttp.send();
+    }
+    </script>
 </body>
 </html>

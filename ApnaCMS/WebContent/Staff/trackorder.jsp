@@ -73,7 +73,6 @@
                                 </a>
 								<div class="nav__dropdown-collapse">
                                     <div class="nav__dropdown-content">
-                                        <a href="SP_AddNewParcel" class="nav__dropdown-item">Add New</a>
                                         <a href="SP_ParcelList" class="nav__dropdown-item">List All</a>
                                         <a href="SP_ItemAcceptByCourier" class="nav__dropdown-item">Item Accepted by courier</a>
                                         <a href="SP_Collected" class="nav__dropdown-item">Collected</a>

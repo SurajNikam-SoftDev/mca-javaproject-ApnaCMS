@@ -302,12 +302,12 @@
         <!--========== CONTENTS ==========-->
         
         <div class = "container-fluid page-header text-center">
-        	<b>Edit Parcel</b>
+        	<b>PreApproved Parcel</b>
         
         </div>
         <div class = "container-fluid form-container">
         	
-        <form class = "form-body" action = "./EditParcel" method = "POST" name = "form">
+        <form class = "form-body" action = "./PreApprovalParcel" method = "POST" name = "form">
         	<input type = "hidden" name = "parcel_id" value = "<%= key %>">
             <div class="row">
             

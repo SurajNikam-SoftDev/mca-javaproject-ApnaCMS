@@ -170,8 +170,7 @@ input[type=password]{
                                     <i class='bx bx-chevron-down nav__icon nav__dropdown-icon'></i>
                                 </a>
 								<div class="nav__dropdown-collapse">
-                                    <div class="nav__dropdown-content">
-                                        <a href="AddNewParcel" class="nav__dropdown-item">Add New</a>
+                                    <div class="nav__dropdown-content">                                      
                                         <a href="ParcelList" class="nav__dropdown-item">List All</a>
                                         <a href="ItemAcceptByCourier" class="nav__dropdown-item">Item Accepted by courier</a>
                                         <a href="Collected" class="nav__dropdown-item">Collected</a>
