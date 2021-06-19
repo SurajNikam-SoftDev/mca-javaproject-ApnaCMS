@@ -7,7 +7,7 @@
 			: "undefined";
 	status = status.isEmpty() ? "undefined" : status;
 
-//	System.out.println("status :: " + status);
+	System.out.println("status :: " + status);
 
 	List<ParcelBean> list = ParcelDao.getAllParcelListByStatus(status);
 	int i = 1;
@@ -35,7 +35,7 @@
                     <td><%= parcel.getReceipantname()%></td>
                     <td><%= parcel.getOpstatus()%></td>
                     <td class = "text-center">
-                    	<a href="javascript:void(0)" class = "btn btn-success" data-toggle="tooltip" data-placement="top" title="Parcel Approval" onclick="location.href='PreApprovalParcel?key=<%= parcel.getParcelid() %>'" style = "padding:0px;text-decoration: none;"><i class="material-icons p-1" style = "font-size:20px;color:white;">done</i></a>	
+                    	<a href="javascript:void(0)" class = "btn btn-success" data-toggle="tooltip" data-placement="top" title="View Parcel" onclick="location.href='SP_ViewParcel?key=<%= parcel.getParcelid() %>'" style = "padding:0px;text-decoration: none;"><i class="material-icons p-1" style = "font-size:20px;color:white;">visibility</i></a>
                     	<a href="javascript:void(0)" class = "btn btn-danger" data-toggle="tooltip" data-placement="top" title="Delete Parcel" onclick="location.href='DeleteParcel?key=<%= parcel.getParcelid() %>'" style = "padding:0px;text-decoration: none;"><i class="material-icons p-1" style = "font-size:20px;color:white;">delete_forever</i></a>
                     </td>
                 </tr>

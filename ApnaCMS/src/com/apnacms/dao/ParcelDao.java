@@ -130,7 +130,7 @@ public class ParcelDao {
 		
 		try {
 			Connection con = DBConnection.getConnection();
-			System.out.println(query);
+//			System.out.println(query);
 			PreparedStatement ps= con.prepareStatement(query);
 			
 			ResultSet rs = ps.executeQuery();  

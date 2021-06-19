@@ -197,6 +197,7 @@
         xmlhttp.send();
     }
     </script>
+    
     <script type="text/javascript">
 	//	$('.myDataTable').DataTable();
 		

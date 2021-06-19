@@ -1,3 +1,6 @@
+<%@page import="java.time.format.DateTimeFormatter"%>
+<%@page import="java.time.LocalDateTime"%>
+<%@page import="java.text.SimpleDateFormat"%>
 <%@page import="com.apnacms.dao.ParcelDao"%>
 <%@page import="com.apnacms.bean.ParcelBean"%>
 <%@page import="java.util.List"%>
@@ -24,6 +27,8 @@
 
 	List<ParcelBean> list = ParcelDao.getAllParcelReport(productcategory, dateFrom, dateTo);
 	int i = 1;
+	
+	
 %>		
 		<div class = "text-right">
 		<a href = "javascript:void(0)" class="btn btn-primary"  onclick="myApp.printTable()" style = "margin:5px 0px; border-radius:5px;"><i class="material-icons nav__icon " style ="color:white;font-size:large;margin:2px 0px 0px 0px;">description</i></a>
@@ -45,7 +50,7 @@
 %>            
               	<tr>
                    	<td><%= i++ %></td>
-                    <td><%= parcel.getDate_created()%></td>
+                    <td><%= parcel.getDate_created() %></td>
                     <td><%= parcel.getSendername()%></td>
                     <td><%= parcel.getReceipantname()%></td>
                     <td><%= parcel.getOpstatus()%></td>
