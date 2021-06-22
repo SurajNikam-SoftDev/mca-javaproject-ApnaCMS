@@ -1,3 +1,7 @@
+<%@page import="com.apnacms.dao.StaffDao"%>
+<%@page import="com.apnacms.admin.dao.BranchStaffDao"%>
+<%@page import="com.apnacms.dao.BranchDao"%>
+<%@page import="com.apnacms.admin.bean.BranchStaffBean"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8" isErrorPage="true"%>
 <!DOCTYPE html>
@@ -22,6 +26,7 @@
     
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.4/css/jquery.dataTables.min.css">
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="./assets/js/adminsearch.js" ></script>
     <script type = "text/javascript">
     function validation(){
     		
@@ -35,40 +40,6 @@
     			document.getElementById("errorspan").innerHTML = "Enter First Name";  
     			return false;
     		}
-            else if(!document.form.firstname.value.match(letterexp))
-    		{
-    			document.getElementById("errorspan").innerHTML = "Enter Letters Only";  
-    			return false;
-    		}
-    		else if(document.form.middlename.value=='')
-    		{
-    			document.getElementById("errorspan").innerHTML = "Enter Middle Name";  
-    			return false;
-    		}
-    		else if(!document.form.middlename.value.match(letterexp))
-     		{
-     			document.getElementById("errorspan").innerHTML = "Enter Letters Only";  
-     			return false;
-     		}
-    		else if(document.form.lastname.value=='')
-    		{
-    			document.getElementById("errorspan").innerHTML = "Enter Last Name";  
-    			return false;
-    		} 
-    		else if(!document.form.lastname.value.match(letterexp))
-     		{
-     			document.getElementById("errorspan").innerHTML = "Enter Letters Only";  
-     			return false;
-     		}
-    		else if(document.form.email.value==''){
-    			document.getElementById("errorspan").innerHTML = "Enter Email Id";  
-    			return false;
-    		}
-    		else if(!document.form.email.value.match(emailexp))
-     		{
-     			document.getElementById("errorspan").innerHTML = "Enter Correct Email Id";  
-     			return false;
-     		}
     		else
     		{
     			document.getElementById("errorspan").innerHTML = "";
@@ -89,8 +60,13 @@ input[type=email], input[type=password]{
 	if(session.getAttribute("emailid")==null)
 	{
 		response.sendRedirect("./LogIn");
-	}	
-%>
+	}
+
+
+	String emailid = session.getAttribute("emailid").toString();
+	System.out.println("emailid :: "+emailid);
+	BranchStaffBean bfb = StaffDao.getAdminAccountByEmailId(emailid); 
+%> 
 	<!--========== HEADER ==========-->
         <header class="header">
             <div class="header__container">
@@ -98,8 +74,28 @@ input[type=email], input[type=password]{
                 <a href="AdminPanel" class="header__logo" style = "text-decoration:none;">Apna Courier Management System - Admin Panel |<small> Welcome, <%= session.getAttribute("emailid") %></small></a>
     
                 <div class="header__search">
-                    <input type="search" placeholder="Search" class="header__input">
-                    <i class='bx bx-search header__icon'></i>
+                    <input list="browsers" name="browser" id="browser" placeholder="Search" class="header__input"><button type = "submit" onclick = "return search()" style = "border:none;outline:0px;background-color:lightgrey;border-radius:15%"><i class='bx bx-search header__icon'></i></button>
+                    <datalist id="browsers" style = "height: 80vh;">
+					  <option value="Home">
+					  <option value="Add New Branch">
+					  <option value="Branch List">
+					  <option value="Add New Branch Staff">
+					  <option value="Branch Staff List">
+					  <option value="Parcel List">
+					  <option value="Item Accept By Courier">
+					  <option value="Collected">
+					  <option value="Shipped">
+					  <option value="In-Transit">
+					  <option value="Arrived At Destination">
+					  <option value="Out For Delivery">
+					  <option value="Ready To PickUp">
+					  <option value="Delivery">
+					  <option value="PickUp">
+					  <option value="Unsuccessfully Delivery Attempt">
+					  <option value="Track Order">
+					  <option value="Reports">
+					  <option value="Manage Account">
+					</datalist>
                 </div>
     
                 <div class="header__toggle">
@@ -208,39 +204,25 @@ input[type=email], input[type=password]{
         <div class = "container-fluid form-container">
         <div class = "row justify-content-center">
         	<div class="col-6">
-        		<form class = "form-body" name = "form">
-		            <div class="form-row justify-content-center">
-		            	<div class="form-group col-md-4">
-		                    <label for="firstname">First Name<span style = "color:red;font-size:14px;font-weight:bolder;">*</span></label>
-		                    <input type="text" class="form-control" name="firstname" placeholder="First Name">
-		                </div>
-		                <div class="form-group col-md-4">
-		                    <label for="middlename">Middle Name<span style = "color:red;font-size:14px;font-weight:bolder;">*</span></label>
-		                    <input type="text" class="form-control" name="middlename" placeholder="Middle Name">
-		                </div>
-		                <div class="form-group col-md-4">
-		                    <label for="lastname">Last Name<span style = "color:red;font-size:14px;font-weight:bolder;">*</span></label>
-		                    <input type="text" class="form-control" name="lastname" placeholder="Last Name">
-		                </div>
+        		<form class = "form-body" action = "./ManageAccount" method = "POST" name = "form">
+		            <div class="form-group col-md-12"> 
+		                    <label for="firstname">Name</label>
+		                    <input type="text" class="form-control" name="name" placeholder="Full Name" value = "<%= bfb.getName() %>" style = "text-transform:uppercase">
 		            </div>
-		            <div class="form-group">
-		                <label for="inputAddress">Email<span style = "color:red;font-size:14px;font-weight:bolder;">*</span></label>
-		                <input type="email" class="form-control" name="email" placeholder="Email">
+		            <div class="form-group col-md-12">
+		                <label for="inputAddress">Email</label>
+		                <input type="email" class="form-control" name="email" value = "<%= emailid%>" readonly>
 		            </div>
-		           	<div class="form-group">
+		           	<div class="form-group col-md-12">
 		                <label for="inputAddress">Password</label>
-		                <input type="password" class="form-control" name="password" placeholder="Password">
-		                <div class = "text-center">
-		                	<small style = "font-size:x-small;color:grey;font-style: oblique;">Leave this blank if you dont want to change the password.</small>
-		                </div>
+		                <input type="password" class="form-control" name="password" value = "<%= bfb.getPassword() %>" placeholder="Password">
 		            </div>
 		            
 					
-		            <div class = "text-center">
+		            <div class = "text-center  col-md-12">
 		                <!-- Button trigger modal -->
-		                <button type="submit" class="btn btn-primary form-control" onclick = "return validation()" style = "font-size: 12px;font-weight: bolder;" >Submit</button>
-		            </div>
-		            
+		                <button type="submit" class="btn btn-primary form-control " style = "font-size: 12px;font-weight: bolder;" onclick = "return validation()"  >Submit</button>
+		            </div>		            
 		        </form>
 		        <div class = "text-center mt-2">
 		        	<b><span id = "errorspan" style = "font-size:small;font-weight:bolder;color:red"></span></b>

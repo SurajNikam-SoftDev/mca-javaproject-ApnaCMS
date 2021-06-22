@@ -22,6 +22,7 @@
     
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.4/css/jquery.dataTables.min.css">
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="./assets/js/staffsearch.js" ></script>
 </head>
 <style>
 [list]::-webkit-calendar-picker-indicator {
@@ -44,10 +45,9 @@ datalist{
             <div class="header__container">
             	<a href="StaffPanel" class="header__logo" style = "text-decoration:none;">Apna Courier Management System - Staff Panel |<small> Welcome, <%= session.getAttribute("emailid") %></small></a>
     			<div class="header__search">
-                    <input list="browsers" name="browser" id="browser" placeholder="Search" class="header__input"><i class='bx bx-search header__icon'></i>
+                    <input list="browsers" name="browser" id="browser" placeholder="Search" class="header__input"><button type = "submit" onclick = "return search()" style = "border:none;outline:0px;background-color:lightgrey;border-radius:15%"><i class='bx bx-search header__icon'></i></button>
                     <datalist id="browsers" style = "height: 80vh;">
 					  <option value="Home">
-					  <option value="Add New Parcel">
 					  <option value="Parcel List">
 					  <option value="Item Accept By Courier">
 					  <option value="Collected">
@@ -60,6 +60,7 @@ datalist{
 					  <option value="PickUp">
 					  <option value="Unsuccessfully Delivery Attempt">
 					  <option value="Track Order">
+					  <option value="Reports">
 					  <option value="Manage Account">
 					</datalist>
                 </div>

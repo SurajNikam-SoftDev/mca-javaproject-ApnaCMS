@@ -7,6 +7,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.apnacms.dao.StaffDao;
+
 /**
  * Servlet implementation class SP_ManageAccount
  */
@@ -35,7 +37,30 @@ public class SP_ManageAccount extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		doGet(request, response);
+		String name = request.getParameter("name") != null || request.getParameter("name") != ""
+				? request.getParameter("name")
+				: "undefined";
+				name = name.isEmpty() ? "undefined" : name;
+
+		String password = request.getParameter("password") != null || request.getParameter("password") != ""
+				? request.getParameter("password")
+				: "undefined";
+				password = password.isEmpty() ? "undefined" : password;
+				
+		String email = request.getParameter("email") != null || request.getParameter("email") != ""
+				? request.getParameter("email")
+				: "undefined";
+				email = email.isEmpty() ? "undefined" : email;
+				
+		System.out.println(name + " :: " + password + " :: " + email);
+		
+		int status = StaffDao.update(name, password, email);
+		
+		if (status == 1) {
+			response.sendRedirect("./SP_ManageAccount");
+		} else {
+			response.sendRedirect("./SP_ManageAccount");
+		}
 	}
 
 }

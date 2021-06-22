@@ -1,3 +1,5 @@
+<%@page import="com.apnacms.dao.StaffDao"%>
+<%@page import="com.apnacms.admin.bean.BranchStaffBean"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8" isErrorPage="true"%>
 <!DOCTYPE html>
@@ -22,6 +24,28 @@
     
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.4/css/jquery.dataTables.min.css">
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="./assets/js/staffsearch.js" ></script>
+    <script type = "text/javascript">
+    function validation(){
+    		
+	    	var contactexp = /^\d{10}$/;
+			var emailexp = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+			var zipexp = /^\d{6}$/;
+			var letterexp = /^[A-Za-z]+$/;
+            
+            if(document.form.firstname.value=='')
+    		{
+    			document.getElementById("errorspan").innerHTML = "Enter First Name";  
+    			return false;
+    		}
+    		else
+    		{
+    			document.getElementById("errorspan").innerHTML = "";
+    			return true;
+    		}
+    		 
+    	} 
+    </script>
 </head>
 <style>
 input[type=email], input[type=password]{
@@ -35,6 +59,10 @@ input[type=email], input[type=password]{
 	{
 		response.sendRedirect("./LogIn");
 	}	
+
+	String emailid = session.getAttribute("emailid").toString();
+	System.out.println("emailid :: "+emailid);
+	BranchStaffBean bfb = StaffDao.getStaffAccountByEmailId(emailid);  
 %>
 	<!--========== HEADER ==========-->
         <header class="header">
@@ -43,8 +71,24 @@ input[type=email], input[type=password]{
                 <a href="StaffPanel" class="header__logo" style = "text-decoration:none;">Apna Courier Management System - Staff Panel |<small> Welcome, <%= session.getAttribute("emailid") %></small></a>
     
                 <div class="header__search">
-                    <input type="search" placeholder="Search" class="header__input">
-                    <i class='bx bx-search header__icon'></i>
+                    <input list="browsers" name="browser" id="browser" placeholder="Search" class="header__input"><button type = "submit" onclick = "return search()" style = "border:none;outline:0px;background-color:lightgrey;border-radius:15%"><i class='bx bx-search header__icon'></i></button>
+                    <datalist id="browsers" style = "height: 80vh;">
+					  <option value="Home">
+					  <option value="Parcel List">
+					  <option value="Item Accept By Courier">
+					  <option value="Collected">
+					  <option value="Shipped">
+					  <option value="In-Transit">
+					  <option value="Arrived At Destination">
+					  <option value="Out For Delivery">
+					  <option value="Ready To PickUp">
+					  <option value="Delivery">
+					  <option value="PickUp">
+					  <option value="Unsuccessfully Delivery Attempt">
+					  <option value="Track Order">
+					  <option value="Reports">
+					  <option value="Manage Account">
+					</datalist>
                 </div>
     
                 <div class="header__toggle">
@@ -126,58 +170,27 @@ input[type=email], input[type=password]{
         </div>
         <div class = "container-fluid form-container">
         <div class = "row justify-content-center">
-        	<div class="col-6">
-        		<form class = "form-body ">
-		            <div class="form-row justify-content-center">
-		            	<div class="form-group col-md-4">
-		                    <label for="firstname">First Name</label>
-		                    <input type="text" class="form-control" name="firstname" placeholder="First Name">
-		                </div>
-		                <div class="form-group col-md-4">
-		                    <label for="middlename">Middle Name</label>
-		                    <input type="text" class="form-control" name="middlename" placeholder="Middle Name">
-		                </div>
-		                <div class="form-group col-md-4">
-		                    <label for="lastname">Last Name</label>
-		                    <input type="text" class="form-control" name="lastname" placeholder="Last Name">
-		                </div>
+        	<div class="col-12">
+        		<form class = "form-body" action = "./SP_ManageAccount" method = "POST">
+		            <div class="form-group col-md-12"> 
+		                    <label for="firstname">Name</label>
+		                    <input type="text" class="form-control" name="name" placeholder="Full Name" value = "<%= bfb.getName() %>" style = "text-transform:uppercase">
 		            </div>
-		            <div class="form-group">
+		            <div class="form-group col-md-12">
 		                <label for="inputAddress">Email</label>
-		                <input type="email" class="form-control" name="email" placeholder="Email">
+		                <input type="email" class="form-control" name="email" value = "<%= emailid%>" readonly>
 		            </div>
-		           	<div class="form-group">
+		           	<div class="form-group col-md-12">
 		                <label for="inputAddress">Password</label>
-		                <input type="password" class="form-control" name="password" placeholder="Password">
+		                <input type="password" class="form-control" name="password" value = "<%= bfb.getPassword() %>" placeholder="Password">
 		            </div>
 		            
 					
-		            <div class = "text-center">
+		            <div class = "text-center  col-md-12">
 		                <!-- Button trigger modal -->
-		                <button type="button" class="btn btn-primary form-control"  data-toggle="modal" data-target="#exampleModalCenter" style = "font-size: 12px;font-weight: bolder;" >Submit</button>
+		                <button type="submit" class="btn btn-primary form-control " style = "font-size: 12px;font-weight: bolder;" onclick = "return validation()" >Submit</button>
 		            </div>
 		            
-		            <!-- Modal -->
-		            <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-		                <div class="modal-dialog modal-dialog-centered" role="document">
-		                <div class="modal-content">
-		                    <div class="modal-header text-center">
-		                    <h5 class="modal-title" id="exampleModalLongTitle">Confirmation</h5>
-		                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-		                        <span aria-hidden="true">&times;</span>
-		                    </button>
-		                    </div>
-		                    <div class="modal-body text-center">
-		                   		You Want To Save Data
-		                    </div>
-		                    <div class="modal-footer">
-		                    <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button> -->
-		                        <button type="button" class="btn btn-danger" data-dismiss="modal" aria-label="Close">No</button>
-		                        <button type="button" class="btn btn-primary" >Yes</button>
-		                    </div>
-		                </div>
-		                </div>
-		            </div>
 		            
 		        </form>
         	</div>
